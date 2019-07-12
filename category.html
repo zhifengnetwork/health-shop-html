@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分类</title>
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        /* 广告图 */
+        .adv-container {
+            width: 7.02rem;
+            height: 2.8rem;
+            border-radius: .1rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .adv-container img {
+            width: 100%;
+        }
+
+        .content{
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+
+        /* 导航滑动效果 */
+        .nav-slide {
+            position: relative;
+            height: .6rem;
+            width: 100%;
+            overflow: hidden;
+            margin:.2rem auto;
+            background: #ffffff;
+        }
+        .nav-slide .scroller {
+            position: absolute
+        }
+
+        .nav-slide .scroller li {
+            height: .6rem;
+            color: #151515;
+            float: left;
+            line-height: .6rem;
+            font-size: .28rem;
+            text-align: center
+        }
+
+        .nav-slide .scroller li a {
+            color: #151515;
+            display: block;
+            margin: 0 .3rem
+        }
+
+        .nav-slide .scroller li.cur {
+            background: #f2f2f2;
+            border-radius: .08rem;
+            overflow: hidden;
+        }
+
+        .goods-list .single-item{
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            padding: .2rem .24rem;
+            box-sizing: border-box;
+            border-radius: .1rem;
+            margin-bottom: .1rem;
+        }
+        .goods-list .single-item .img-wrap{
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: .05rem;
+            display: flex;
+            align-items: center;
+            margin-right: .26rem;
+        }
+        .goods-list .single-item .img-wrap img{
+            max-width: 100%;
+        }
+        .goods-list .single-item .main{
+            flex: 1;
+        }
+        .goods-list .single-item .main .goods-name{
+            color: #151515;
+            line-height: .38rem;
+            font-weight: normal;
+            overflow: hidden;  
+            display: -webkit-box;    
+            -webkit-line-clamp: 2;     
+            -webkit-box-orient: vertical; 
+        }
+        .goods-list .single-item .main .price{
+            color:#f90a0a;
+            line-height: .84rem;
+        }
+        .goods-list .single-item .main .buy{
+            display: flex;
+            justify-content: space-between;
+        }
+        .goods-list .single-item .main .buy .add-cart{
+            width: .32rem;
+            height: .3rem;
+            margin-left: .15rem;;
+            background: url(./images/category/add-cart.png) no-repeat;
+            background-size: 100%;
+        }
+        .goods-list .single-item .main .buy .buy-btn{
+            width: 1.5rem;
+            height: .4rem;
+            line-height: .4rem;
+            text-align: center;
+            font-size: .28rem;
+            border: .01rem solid #ff4d4d;
+            color: #f90a0a;
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="backBtn" onclick="returnFun()"><img src="./images/category/back-icon.png" /></div>
+            <div class="title">分类</div>
+        </div>
+        <div class="height-88"></div>
+        <!-- 广告图 -->
+        <div class="swiper-container adv-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/category/adv-img01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/category/adv-img01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/category/adv-img01.png" />
+                </div>
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
+       <div class="content">
+            <!-- 导航滑动 -->
+            <div class="nav-slide" id="nav-slide">
+                <div class="scroller">
+                    <ul class="clearfix">
+                        <li><a href="javascript:void(0)">按摩椅</a></li>
+                        <li><a href="javascript:void(0)">血压计</a></li>
+                        <li><a href="javascript:void(0)">血糖仪</a></li>
+                        <li><a href="javascript:void(0)">制氧机</a></li>
+                        <li><a href="javascript:void(0)">足疗</a></li>
+                        <li><a href="javascript:void(0)">血糖仪</a></li>
+                        <li><a href="javascript:void(0)">制氧机</a></li>
+                        <li><a href="javascript:void(0)">足疗</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="goods-list">
+                <div class="single-item">
+                    <div class="img-wrap">
+                        <img src="./images/home/gift-goods-img01.png" />
+                    </div>
+                    <div class="main">
+                        <a href="#"><h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3></a>
+                        <p class="price">￥55262.00</p>
+                        <div class="buy">
+                            <span class="add-cart"></span>
+                            <span class="buy-btn">立即购买</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="img-wrap">
+                        <img src="./images/home/gift-goods-img01.png" />
+                    </div>
+                    <div class="main">
+                        <a href="#"><h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3></a>
+                        <p class="price">￥55262.00</p>
+                        <div class="buy">
+                            <span class="add-cart"></span>
+                            <span class="buy-btn">立即购买</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <div class="img-wrap">
+                        <img src="./images/home/gift-goods-img01.png" />
+                    </div>
+                    <div class="main">
+                        <a href="#"><h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3></a>
+                        <p class="price">￥55262.00</p>
+                        <div class="buy">
+                            <span class="add-cart"></span>
+                            <span class="buy-btn">立即购买</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       </div>
+
+       <div class="height-98"></div>
+       <!-- 底部导航栏 -->
+       <div class="footer">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <i class="home-icon"></i>
+                        <span class="text">首页</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="./category.html">
+                        <i class="category-icon"></i>
+                        <span class="text">分类</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./cart.html">
+                        <i class="cart-icon"></i>
+                        <span class="text">购物车</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./user.html">
+                        <i class="user-icon"></i>
+                        <span class="text">我的</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/navbarscroll.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        /**
+         * 首页轮播图
+         */
+        var mySwiper = new Swiper('.adv-container', {
+            loop: true,
+            paginationClickable: true,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        })
+
+        /**
+         * 导航滑动 
+         */
+        $('#nav-slide').navbarscroll({
+            defaultSelect: 0,
+            scrollerWidth: 6,
+            fingerClick: 1,
+            endClickScroll: function (obj) {
+                console.log(obj.text())
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

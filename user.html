@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的</title>
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .topHeader{
+            width: 100%;
+            height: 2.9rem;
+            color: #ffffff;
+            background: url(./images/user/topHeader-bg.png) no-repeat;
+            background-size: 7.5rem 2.38rem;
+            padding: 0 .24rem;
+            box-sizing: border-box;
+            position: relative;
+            margin-bottom: .2rem;
+        }
+        .topHeader .user-info{
+            padding:.28rem 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+        }
+        .topHeader .user-info .avatar{
+            width: 1.1rem;
+            height: 1.1rem;
+            border-radius: 50%;
+            margin-right: .24rem;
+        }
+        .topHeader .user-info .avatar img{
+            width: 100%;
+        }
+        .topHeader .user-info .user-msg{
+            flex: 1;
+            font-size: .26rem;
+        }
+        .topHeader .user-info .user-msg .user-name{
+            line-height: .6rem;
+            font-size: .3rem;
+        }
+        .topHeader .user-info .user-msg .user-id{
+            font-size: .26rem;
+            margin-left: .28rem;
+        }
+        .topHeader .user-info .user-msg .tag{
+            width: .32rem;
+            height: .24rem;
+            margin-right: .16rem;
+            display: inline-block;
+            vertical-align: middle;
+            background: url(./images/user/vip-tag.png) no-repeat;
+            background-size: 100%;
+        }
+        .topHeader .set-up{
+            width: .28rem;
+            height: .28rem;
+            background: url(./images/user/set-up-icon.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            right: .2rem;
+            top: .2rem;
+        }
+        .topHeader .account-balance{
+            width: 100%;
+            height: 1.18rem;
+            border-radius: .08rem;
+            background-color: #fff;
+            font-size: .26rem;
+            text-align: center;
+            color: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .topHeader .account-balance .money{
+            font-size: .3rem;
+            color: #f30e3f;
+        }
+        .topHeader .account-balance .right-arrow{
+            width: .1rem;
+            height: .16rem;
+            display: inline-block;
+            background: url(./images/user/right-arrow01.png) no-repeat;
+            background-size: 100%;
+        }
+
+        .content{
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+
+        /* 公共标题 */
+        .headline{
+            width: 100%;
+            height: .6rem;
+            color: #333333;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-bottom: .01rem solid #e5e5e5; 
+        }
+        .headline h3{
+            font-size: .28rem;
+            font-weight: normal;
+            color: #151515;
+        }
+        .headline .more{
+            min-width: .08rem;
+            min-height: .14rem;
+            color: #525252;
+            font-size: .24rem;
+            background: url(./images/user/right-arrow02.png) no-repeat right center;
+            background-size: .08rem .14rem;
+            padding-right: .18rem;
+        }
+
+
+        /* 我的订单 */
+        .order-area{
+            width:100%;
+            background-color: #fff;
+            border-radius: .12rem;
+            margin-bottom: .3rem;
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+
+        .order-area .list{
+            height: 1.14rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .order-area .list .item{
+            width: 25%;
+            font-size: .22rem;
+            text-align: center;
+            position: relative;
+        }
+        .order-area .list .item .num{
+            width: .2rem;
+            height: .2rem;
+            text-align: center;
+            line-height: .2rem;
+            display: inline-block;
+            border: .01rem solid #fc822e;
+            border-radius: 50%;
+            color: #fc822e;
+            font-size: .14rem;
+            padding: .02rem;
+            position: absolute;
+            right: .2rem;
+            top: -.08rem;
+            
+        }
+        .order-area .list .item a{
+            color: #333333;
+        }
+        .order-area .list .item span.icon{
+            width: .48rem;
+            height: .48rem;
+            display: block;
+            margin: 0 auto .1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .order-area .list .item span.icon img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* 链接列表 */
+        .link-list{
+            background-color: #fff;
+            border-radius: .08rem;
+            padding: 0 .2rem;
+            box-sizing: border-box;
+        }
+        .link-list .link-item{
+            height: .8rem;
+            font-size: .28rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #525252;
+            border-bottom: .01rem solid #e6e6e6;
+        }
+        .link-list .link-item.border-none{
+            border-bottom: none;
+        }
+        .link-list .link-item .more{
+            min-width: .08rem;
+            min-height: .14rem;
+            background: url(./images/user/right-arrow02.png) no-repeat right center;
+            background-size: .08rem .14rem;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 顶部 -->
+        <div class="topHeader">
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="./images/user/avatav-img.png" />
+                </div>
+                <div class="user-msg">
+                    <p class="user-name">小腊肉<span class="user-id">ID:187514</span></p>
+                    <p><span class="tag"></span>金卡vip</p>
+                </div>
+            </div>
+            <!-- 账户余额 -->
+            <div class="account-balance">
+                <p class="money">￥89922.00</p>
+                <p>提现余额 <span class="right-arrow"></span></p>
+            </div>
+            <div class="set-up"></div>
+        </div>
+
+        <div class="content">
+            <!-- 订单 -->
+            <div class="order-area">
+                <a href="./order.html">
+                    <div class="headline">
+                        <h3>我的订单</h3>
+                        <span class="more">查看全部订单</span>
+                    </div>
+                </a>
+                <div class="list">
+                    <div class="item">
+                        <a href="#">
+                            <span class="icon">
+                                <img src="./images/user/dfk-icon.png"/>
+                            </span>
+                            <span>待付款</span>
+                            <span class="num">10</span>
+                        </a>
+                    </div>    
+                    <div class="item">
+                        <a href="#">
+                            <span class="icon">
+                                <img src="./images/user/dfh-icon.png"/>
+                            </span>
+                            <span>待发货</span>
+                        </a>
+                    </div>    
+                    <div class="item">
+                        <a href="#">
+                            <span class="icon">
+                                <img src="./images/user/dsh-icon.png"/>
+                            </span>
+                            <span>待收货</span>
+                        </a>
+                    </div>    
+                    <div class="item">
+                        <a href="#">
+                            <span class="icon">
+                                <img src="./images/user/dpj-icon.png"/>
+                            </span>
+                            <span>待评价</span>
+                        </a>
+                    </div>    
+                    <div class="item">
+                        <a href="#">
+                            <span class="icon">
+                                <img src="./images/user/shfw-icon.png"/>
+                            </span>
+                            <span>售后服务</span>
+                        </a>
+                    </div>              
+                </div>
+            </div>
+
+            <div class="link-list">
+                <a href="#">
+                    <div class="link-item">
+                        <span>我的收藏</span>
+                        <span class="more"></span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="link-item">
+                        <span>佣金明细</span>
+                        <span class="more"></span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="link-item">
+                        <span>邀请二维码</span>
+                        <span class="more"></span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="link-item border-none">
+                        <span>地址管理</span>
+                        <span class="more"></span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        
+
+        <div class="height-98"></div>
+        <!-- 底部导航栏 -->
+        <div class="footer">
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <i class="home-icon"></i>
+                            <span class="text">首页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./category.html">
+                            <i class="category-icon"></i>
+                            <span class="text">分类</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./cart.html">
+                            <i class="cart-icon"></i>
+                            <span class="text">购物车</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./user.html">
+                            <i class="user-icon"></i>
+                            <span class="text">我的</span>
+                        </a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script>
+     
+    </script>
+</body>
+
+</html>
