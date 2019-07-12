@@ -3,24 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>健康商城-首页</title>
     <script src="./js/rem.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/swiper.css">
-    <link rel="stylesheet" href="./css/3d.css">
     <link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/certify.css">
-	<script src="js/swiper.min.js"></script>
     <link rel="stylesheet" href="./css/base.css">
-    
+
     <style>
         .search {
             width: 7.02rem;
             height: .5rem;
             border-radius: .2rem;
-            display: flex;
+            display:flex;
             align-items: center;
             margin: .1rem auto .2rem;
             border: .01rem solid #6a6a6a;
@@ -135,6 +132,7 @@
 
         .rush-vip .buy-btn {
             font-size: .26rem;
+            color: #151515;
             position: absolute;
             right: .2rem;
             bottom: .2rem;
@@ -165,111 +163,83 @@
         }
 
         /* 超值大礼包 */
-        .gift-area{
-            
+        .gift-area .gift-list{
+            padding: .2rem 0;
         }
 
-        .gift-list .swiper-slide{
-            width:60%;
+        .gift-list .swiper-slide {
+            width: 65%;
         }
-        .gift-list img{
-            width: 100%;
-        }
-        .gift-area .gift-list .single-item{
-            /* width: 3.36rem; */
-            width: 100%;
-            height:6.1rem !important;
+        .gift-area .gift-list .single-item .top{
             overflow: hidden;
-            padding: .08rem;
+            padding: .1rem;
             box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 0 .08rem #999;
+            border-radius: .1rem;
         }
-
         .gift-area .gift-list .single-item .img-wrap {
-            width: 100%;
-            height: 3.14rem;
+            width: 98%;
+            height: 3.6rem;
             overflow: hidden;
+            background: #efefef;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        .gift-area .gift-list .single-item .img-wrap img{
-            width: 100%;
+        .gift-area .gift-list .single-item .img-wrap img {
+            max-width: 100%;
+            width: 2.8rem;
         }
         .gift-area .gift-list .single-item .main {
             width: 100%;
-            height: 2.8rem;
-            background-color: #fff;
-            padding:.1rem;
+            height: 3.1rem;
+            padding: .1rem;
             box-sizing: border-box;
         }
+        .gift-area .gift-list .single-item .main .goods-name{
+            line-height: .6rem;
+            color: #151515;
+            font-size: .28rem;
+            text-align: center;
+        }
 
-        .gift-area .gift-list .single-item .main h3 {
-            line-height: .5rem;
+        .gift-area .gift-list .single-item .main .price{
             font-size: .24rem;
+            line-height: .4rem;
+            text-align: center;
         }
 
-        .gift-area .gift-list .single-item .main p {
-            line-height: .24rem;
+        .gift-area .gift-list .single-item .main .dec{
+            line-height: .34rem;
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 2;
             overflow: hidden;
         }
 
-        /* .gift-area .swiper-container {
-            width: 100%;
-            height: 100%;
-        }
-        .gift-area .gift-list img {
-            width: 100%;
-        }
-
-        .gift-area .swiper-container {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-        .gift-area .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 3.7rem;
-            height: 300px;
-
+        .gift-area .gift-list .single-item .main .see-btn {
+            width: 1.1rem;
+            height: .36rem;
+            border: .01rem solid #7d7d7d;
+            border-radius: .08rem;
+            text-align: center;
+            line-height: .36rem;
+            margin: .1rem auto;
+            color: #151515;
         }
 
-        .gift-area .gift-list .single-item{
-            width: 3.36rem;
-            width: 100%;
-            height:6.1rem;
-            overflow: hidden;
-            transition: all 0.6s;
+        .gift-area .gift-list .single-item .buy-btn {
+            width: 2.98rem;
+            height: .6rem;
+            text-align: center;
+            line-height: .6rem;
+            background-color: #ff0000;
+            border-radius: .25rem;
+            color: #ffffff;
+            margin: .15rem auto;
         }
-
-        .gift-area .gift-list .single-item .img-wrap {
-            width: 100%;
-            height: 3.14rem;
-            overflow: hidden;
-        }
-
-        .gift-area .gift-list .single-item .main {
-            width: 100%;
-            height: 2.8rem;
-            background-color: #fff;
-            padding:.1rem;
-            box-sizing: border-box;
-        }
-
-        .gift-area .gift-list .single-item .main h3 {
-            line-height: .5rem;
-        }
-
-        .gift-area .gift-list .single-item .main p {
-            line-height: .24rem;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 5;
-            overflow: hidden;
-        } */
-
-
 
     </style>
 </head>
@@ -335,7 +305,9 @@
                 <p>会员卡</p>
                 <p>￥1000</p>
             </div>
-            <div class="buy-btn">立即购买&gt;</div>
+            <a href="#">
+                <div class="buy-btn">立即购买&gt;</div>
+            </a>
         </div>
 
         <!-- 超值大礼包 -->
@@ -344,155 +316,118 @@
                 <i class="icon"><img src="./images/home/gift-icon.png"></i>
                 <h3>超值大礼包</h3>
             </div>
-      
-            <!-- <div class="swiper-container gift-list">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                            <div class="img-wrap">
-                                <img src="./images/home/gift-goods-img01.png" />
-                            </div>
-                            <div class="main">
-                                <h3>老人体验仪器</h3>
-                                <p>商品简介商品简介商品简介商品简介商品简介</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                            <div class="img-wrap">
-                                <img src="./images/home/gift-goods-img01.png" />
-                            </div>
-                            <div class="main">
-                                <h3>老人体验仪器2</h3>
-                                <p>商品简介商品简介商品简介商品简介商品简介</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                            <div class="img-wrap">
-                                <img src="./images/home/gift-goods-img01.png" />
-                            </div>
-                            <div class="main">
-                                <h3>老人体验仪器3</h3>
-                                <p>商品简介商品简介商品简介商品简介商品简介</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-             
-                <div class="swiper-pagination"></div>
-            </div> -->
-
-            <div class="swiper-container gift-list" style="display: none">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                            <div class="img-wrap">
-                                <img src="./images/home/gift-goods-img01.png" />
-                            </div>
-                            <div class="main">
-                                <h3>老人体验仪器</h3>
-                                <p>商品简介商品简介商品简介商品简介商品简介</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                                <div class="img-wrap">
-                                    <img src="./images/home/gift-goods-img01.png" />
-                                </div>
-                                <div class="main">
-                                    <h3>老人体验仪器</h3>
-                                    <p>商品简介商品简介商品简介商品简介商品简介</p>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                                <div class="img-wrap">
-                                    <img src="./images/home/gift-goods-img01.png" />
-                                </div>
-                                <div class="main">
-                                    <h3>老人体验仪器</h3>
-                                    <p>商品简介商品简介商品简介商品简介商品简介</p>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item fl">
-                            <div class="img-wrap">
-                                <img src="./images/home/gift-goods-img01.png" />
-                            </div>
-                            <div class="main">
-                                <h3>老人体验仪器</h3>
-                                <p>商品简介商品简介商品简介商品简介商品简介</p>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
+            <!-- 3d滚动效果 -->
             <div class="swiper-container gift-list">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="single-item fl">
-                            <div class="img-wrap">
-                                <img src="./images/home/gift-goods-img01.png" />
+                        <div class="single-item">
+                            <div class="top">
+                                <div class="img-wrap">
+                                    <img src="./images/home/gift-goods-img01.png" />
+                                </div>
+                                <div class="main">
+                                    <a href="#">
+                                        <h3 class="goods-name">老人体验仪器1</h3>
+                                    </a>
+                                    <p class="dec">商品简介商品简介商品简介商品简介商品简介</p>
+                                    <p class="price">原价:<span class="original-price">22692.00</span>元</p>
+                                    <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
+                                    <p class="price">省:<span class="save-money">6520.00</span>元</p>
+                                    <a href="#"><p class="see-btn">查看</p></a>
+                                </div>
                             </div>
-                            <div class="main">
-                                <h3>老人体验仪器1</h3>
-                                <p>商品简介商品简介商品简介商品简介商品简介</p>
+                            <div class="buy-btn">
+                                立即购买
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                            <div class="single-item fl">
-                                    <div class="img-wrap">
-                                        <img src="./images/home/gift-goods-img01.png" />
-                                    </div>
-                                    <div class="main">
-                                        <h3>老人体验仪器2</h3>
-                                        <p>商品简介商品简介商品简介商品简介商品简介</p>
-                                    </div>
+                        <div class="single-item">
+                            <div class="top">
+                                <div class="img-wrap">
+                                    <img src="./images/home/gift-goods-img01.png" />
                                 </div>
+                                <div class="main">
+                                    <a href="#">
+                                        <h3 class="goods-name">老人体验仪器2</h3>
+                                    </a>
+                                    <p class="dec">商品简介商品简介商品简介商品简介商品简介</p>
+                                    <p class="price">原价:<span class="original-price">22692.00</span>元</p>
+                                    <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
+                                    <p class="price">省:<span class="save-money">6520.00</span>元</p>
+                                    <a href="#"><p class="see-btn">查看</p></a>
+                                </div>
+                            </div>
+                            <div class="buy-btn">
+                                立即购买
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                            <div class="single-item fl">
-                                    <div class="img-wrap">
-                                        <img src="./images/home/gift-goods-img01.png" />
-                                    </div>
-                                    <div class="main">
-                                        <h3>老人体验仪器3</h3>
-                                        <p>商品简介商品简介商品简介商品简介商品简介</p>
-                                    </div>
+                        <div class="single-item">
+                            <div class="top">
+                                <div class="img-wrap">
+                                    <img src="./images/home/gift-goods-img01.png" />
                                 </div>
+                                <div class="main">
+                                    <a href="#">
+                                        <h3 class="goods-name">老人体验仪器3</h3>
+                                    </a>
+                                    <p class="dec">商品简介商品简介商品简介商品简介商品简介</p>
+                                    <p class="price">原价:<span class="original-price">22692.00</span>元</p>
+                                    <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
+                                    <p class="price">省:<span class="save-money">6520.00</span>元</p>
+                                    <a href="#"><p class="see-btn">查看</p></a>
+                                </div>
+                            </div>
+                            <div class="buy-btn">
+                                立即购买
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                            <div class="single-item fl">
-                                    <div class="img-wrap">
-                                        <img src="./images/home/gift-goods-img01.png" />
-                                    </div>
-                                    <div class="main">
-                                        <h3>老人体验仪器4</h3>
-                                        <p>商品简介商品简介商品简介商品简介商品简介</p>
-                                    </div>
+                        <div class="single-item">
+                            <div class="top">
+                                <div class="img-wrap">
+                                    <img src="./images/home/gift-goods-img01.png" />
                                 </div>
+                                <div class="main">
+                                    <a href="#">
+                                        <h3 class="goods-name">老人体验仪器4</h3>
+                                    </a>
+                                    <p class="dec">商品简介商品简介商品简介商品简介商品简介</p>
+                                    <p class="price">原价:<span class="original-price">22692.00</span>元</p>
+                                    <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
+                                    <p class="price">省:<span class="save-money">6520.00</span>元</p>
+                                    <a href="#"><p class="see-btn">查看</p></a>
+                                </div>
+                            </div>
+                            <div class="buy-btn">
+                                立即购买
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                            <div class="single-item fl">
-                                    <div class="img-wrap">
-                                        <img src="./images/home/gift-goods-img01.png" />
-                                    </div>
-                                    <div class="main">
-                                        <h3>老人体验仪器5</h3>
-                                        <p>商品简介商品简介商品简介商品简介商品简介</p>
-                                    </div>
+                        <div class="single-item">
+                            <div class="top">
+                                <div class="img-wrap">
+                                    <img src="./images/home/gift-goods-img01.png" />
                                 </div>
+                                <div class="main">
+                                    <a href="#">
+                                        <h3 class="goods-name">老人体验仪器5</h3>
+                                    </a>
+                                    <p class="dec">商品简介商品简介商品简介商品简介商品简介</p>
+                                    <p class="price">原价:<span class="original-price">22692.00</span>元</p>
+                                    <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
+                                    <p class="price">省:<span class="save-money">6520.00</span>元</p>
+                                    <a href="#"><p class="see-btn">查看</p></a>
+                                </div>
+                            </div>
+                            <div class="buy-btn">
+                                立即购买
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -532,51 +467,32 @@
     </div>
 </body>
 <script src="./js/jquery-1.8.3.min.js"></script>
-<!-- <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.roundabout.min.js"></script> -->
-<script src="./js/swiper.js"></script>
-
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+<script src="./js/swiper.min.js"></script>
 <script>
     /**
      * 首页轮播图
      */
     var mySwiper = new Swiper('.banner', {
         loop: true,
-        pagination: '.swiper-pagination',
         paginationClickable: true,
         autoplay: 3000,
-        autoplayDisableOnInteraction: false
+        autoplayDisableOnInteraction: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
     })
 
     /**
      * 超值大礼包滑动效果 
-     */ 
-    // var swiper = new Swiper('.gift-list', {
-    //     loop: true,
-    //     pagination: '.swiper-pagination',
-    //     effect: 'coverflow',
-    //     grabCursor: true,
-    //     centeredSlides: true,
-    //     slidesPerView: 'auto',
-    //     coverflow: {
-    //         rotate: 50,
-    //         stretch: 0,
-    //         depth: 100,
-    //         modifier: 1,
-    //         slideShadows : true
-    //     }
-    // });
-
-
+     */
     var mySwiper = new Swiper(".gift-list", {
         loop: true,
         loopedSlides: 5,
         slidesPerView: 'auto',
         autoplay: true,
         centeredSlides: true,
-        initialSlide: 2,
+        initialSlide: 0,
         watchSlidesProgress: true,
         pagination: {
             el: '.banner_page',
@@ -612,22 +528,4 @@
     })
 
 </script>
-	<!-- <script type="text/javascript">		
-		$(document).ready(function(){
-			$('.roundabout_box ul').roundabout({
-				duration: 1000,
-				minScale: 0.8,
-				autoplay: true,
-				autoplayDuration: 5000,
-				minOpacity:0.5,
-				maxOpacity: 1,
-				reflect: true,
-				startingChild: 3,
-				autoplayInitialDelay: 5000,
-				autoplayPauseOnHover: true,
-				enableDrag: true
-			});
-		});
-	</script> -->
-
 </html>
