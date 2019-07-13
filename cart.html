@@ -9,14 +9,303 @@
     <script src="./js/rem.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .content{
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+        .cart-list .single-item{
+            width: 100%;
+            height: 2.38rem;
+            background-color: #fff;
+            border-radius: .08rem;
+            margin-bottom: .1rem;
+            padding: .18rem .4rem .18rem 0;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .cart-list .single-item .check{
+            width: .44rem;
+            height: .44rem;
+            margin: 0 .06rem;
+        }
+        .cart-list .single-item .check input{
+            width: .44rem;
+            height: .44rem;
+            background: url(./images/cart/unselected-icon.png) no-repeat;
+            background-size: .43rem .43rem;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            display: inline-block;
+        }
+        .cart-list .single-item .check input:checked::after{
+            width: .44rem;
+            height: .44rem;
+            content: '';
+            background: url(./images/cart/selected-icon.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+        }
+        .cart-list .single-item .img-wrap{
+            width: 2rem;
+            height: 2rem;
+            margin-right: .2rem;
+        }
+        .cart-list .single-item .img-wrap img{
+            width: 100%;
+        }
+        .cart-list .single-item .main{
+            flex: 1;
+        }
+        .cart-list .single-item .main .goods-name{
+            font-size: .28rem;
+            margin-bottom: .25rem;
+            line-height: .4rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp:2;
+            overflow: hidden;
+        }
+        .cart-list .single-item .main .price{
+            color: #ff112f;
+            font-size: .2rem;
+        }
+        .cart-list .single-item .main .price span{
+            font-size: .3rem;
+        }
+        .cart-list .single-item .main .group-line{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 步进器 */
+        .stepper{
+            width: 2rem;
+            height: .4rem;
+            border:.01rem solid #e9e9e9;
+            border-radius: .18rem;
+            display: flex;
+            align-items: center;
+        }
+        .stepper span{
+            width: .54rem;
+            display: inline-block;
+            text-align: center;
+        }
+        .stepper .number{
+            width: .92rem; 
+            height: 100%;
+            font-size: .24rem;
+            text-align: center;
+            border-left: .01rem solid #e6e6e6;
+            border-right: .01rem solid #e6e6e6;
+            outline: none;
+        }
+        .stepper .reSty{
+            color: #cbcbcb;
+        }
+        .cart-list .single-item .del-btn{
+            width: .56rem;
+            height: .56rem;
+            background: url(./images/cart/del-icon.png) no-repeat center center;
+            background-size: .26rem .25rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .height-120{
+            width: 100%;
+            height:1.2rem;
+        }
+        /* 底部操作栏 */
+        .holderBar{
+            width: 100%;
+            height: 1.2rem;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .holderBar .checkAll{
+            margin-left: .3rem;
+            display: flex;
+            align-items: center;
+            font-size: .3rem;
+        }
+        .holderBar .checkAll input{
+            width: .44rem;
+            height: .44rem;
+            margin: 0 .06rem;
+            background: url(./images/cart/unselected-icon.png) no-repeat;
+            background-size: .43rem .43rem;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            vertical-align: sub;
+            display: inline-block;
+        }
+        .holderBar .checkAll input:checked::after{
+            width: .44rem;
+            height: .44rem;
+            content: '';
+            background: url(./images/cart/selected-icon.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+        }
+        .total-wrap{
+            color: #151515;
+            font-size: .3rem;
+            text-align: center;
+        }
+        .total-wrap .total{
+            font-size: .3rem;
+            color: #151515;
+        }
+
+        .total-wrap .total .total-price{
+            color: #ff0000;
+            font-size: .35rem;
+        }
+        .total-wrap .save-money{
+            color: #333333;
+            font-size: .24rem;
+            line-height: .36rem;
+        }
+        .holderBar .buy-btn{
+            width: 2.2rem;
+            height: 100%;
+            line-height: 1.2rem;
+            font-size: .3rem;
+            text-align: center;
+            color: #fff;
+            background-color: #ff0000;
+        }
+        
+    </style>
 </head>
 <body>
     <div class="wrapper">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="backBtn" onclick="returnFun()"><img src="./images/category/back-icon.png" /></div>
+            <div class="title">购物车</div>
+            <div class="rightLink">
+                <a href="./index.html"><img src="./images/cart/toHome-icon.png" /></a>
+            </div>
+        </div>
+        <div class="height-88"></div>
 
+        <div class="content cart-container">
+            <div class="cart-list">
+                <div class="single-item">
+                    <div class="check">
+                        <input type="checkbox">
+                    </div>
+                    <div class="img-wrap">
+                        <a href="#"><img src="./images/public/goods-img01.png" /></a>
+                    </div>
+                    <div class="main">
+                        <a href="#"><p class="goods-name">自然堂化妆品补水防晒虎虎生风</p></a>
+                        <div class="group-line">
+                            <div class="price">￥<span>360.00</span></div>
+                            <div class="stepper">
+                                <span class="reduce" id="reduce">-</span>
+                                <input type="text" value="1" class="number">
+                                <span class="add" id="add">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="del-btn"></div>
+                </div>
+                <div class="single-item">
+                    <div class="check">
+                        <input type="checkbox">
+                    </div>
+                    <div class="img-wrap">
+                        <a href="#"><img src="./images/public/goods-img01.png" /></a>
+                    </div>
+                    <div class="main">
+                        <a href="#"><p class="goods-name">自然堂化妆品补水防晒虎虎生风</p></a>
+                        <div class="group-line">
+                            <div class="price">￥<span>360.00</span></div>
+                            <div class="stepper">
+                                <span class="reduce" id="reduce">-</span>
+                                <input type="text" value="1" class="number">
+                                <span class="add" id="add">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="del-btn"></div>
+                </div>
+                <div class="single-item">
+                    <div class="check">
+                        <input type="checkbox">
+                    </div>
+                    <div class="img-wrap">
+                        <a href="#"><img src="./images/public/goods-img01.png" /></a>
+                    </div>
+                    <div class="main">
+                        <a href="#"><p class="goods-name">自然堂化妆品补水防晒虎虎生风</p></a>
+                        <div class="group-line">
+                            <div class="price">￥<span>360.00</span></div>
+                            <div class="stepper">
+                                <span class="reduce" id="reduce">-</span>
+                                <input type="text" value="1" class="number">
+                                <span class="add" id="add">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="del-btn"></div>
+                </div>
+                <div class="single-item">
+                    <div class="check">
+                        <input type="checkbox">
+                    </div>
+                    <div class="img-wrap">
+                        <a href="#"><img src="./images/public/goods-img01.png" /></a>
+                    </div>
+                    <div class="main">
+                        <a href="#"><p class="goods-name">自然堂化妆品补水防晒虎虎生风</p></a>
+                        <div class="group-line">
+                            <div class="price">￥<span>360.00</span></div>
+                            <div class="stepper">
+                                <span class="reduce" id="reduce">-</span>
+                                <input type="text" value="1" class="number">
+                                <span class="add" id="add">+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="del-btn"></div>
+                </div>
+            </div>
+        </div>
 
-        <div class="height-98"></div>
+        <div class="height-120"></div>
+        <!-- 底部操作栏 -->
+        <div class="holderBar">
+            <div class="checkAll">
+                <input type="checkbox" id="checkAll">
+                <label for="checkAll">全选</label>
+            </div>
+            <div class="total-wrap">
+                <div class="total">
+                    总计 : <span class="total-price">￥0.00</span>
+                </div>
+                <div class="save-money">节省：￥10.00</div>
+            </div>
+            <div class="buy-btn">去结算<span class="total-num">(3)</span></div>
+        </div>
+
+        
         <!-- 底部导航栏 -->
-        <div class="footer">
+        <!-- <div class="footer">
             <ul>
                 <li>
                     <a href="./index.html">
@@ -43,7 +332,106 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+    	$(function(){
+			/**
+             * 加加
+             */ 
+			$(".add").click(function(){
+				var $inputVal = $(this).prev('input')
+					$count = parseInt($inputVal.val())+1
+					$inputVal.val($count);
+					if($inputVal.val()>1 && $(".reduce").hasClass('reSty')){
+						$(".reduce").removeClass('reSty');
+					}
+					totalMoney()
+			})
+			
+			/**
+             * 减减
+             */
+			$(".reduce").click(function(){
+				var $inputVal = $(this).next('input')
+					$count = parseInt($inputVal.val())-1
+					if($inputVal.val()>1){
+						$inputVal.val($count);
+					}
+					if($inputVal.val()==1 && !$(this).hasClass('reSty')){
+						$(this).addClass('reSty');
+					}
+					totalMoney()
+
+			})
+
+			/**
+			 * 全选的实现
+			 */					
+			$("#checkAll").click(function(){
+				$(".check input").attr("checked",this.checked);
+				totalMoney()
+			});
+
+			/**
+			 * 为下面所有checkbox绑定点击事件
+			 */
+			 $(".check input").click(function(){
+				//判断全选是否要被选中
+				$("#checkAll").attr("checked",$(".check input").length == $(".check input").filter(":checked").length);
+				totalMoney()
+			});
+			 	$(".check input").attr("checked",this.checked);
+				totalMoney()
+
+			/**
+             * 价格总计
+             */
+			function totalMoney() {
+				var total_money = 0;
+				var total_count = 0;
+
+				var calBtn = $('.buy-btn');
+
+				var $sonCheckBox = $(".check input")
+				$sonCheckBox.each( (i,e) => {
+					if($(e).is(':checked')){
+						total_money += parseInt($(e).parents('.single-item').find('.price span').html()) * parseInt($(e).parents('.single-item').find('.number').val())
+						total_count += parseInt($(e).parents('.single-item').find('.number').val());
+					}
+					
+				});
+				$('.total-price').html(`¥ ${total_money.toFixed(2)}`);
+				$('.amount-sum').html(`总件数:${total_count}`);
+				$('#amount_sum').val(total_count);
+				$('#total').val(total_money);
+
+			}
+
+			/**
+             * 判断输入的值是否为数字 
+             */
+			$(".number").change(function(){
+				var num = this.value;
+				if(!/^\d+$/.test(num)||parseInt(num) <1){
+					//把input文本框中的value值进行重置
+					this.value="1";
+				}
+				totalMoney()
+            })
+            
+            /**
+             * 删除
+             */
+            $(".del-btn").click(function(){
+                $(this).parents(".single-item").remove();
+                totalMoney()
+            })
+
+
+		})
+    </script>
 </body>
 </html>

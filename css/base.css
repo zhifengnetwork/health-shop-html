@@ -38,7 +38,16 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.header .rightLink{
+    width: 10%;
+    text-align: center;
+}
+.header .rightLink a{
+    display: block;
+}
+.header .rightLink img{
+    width: .43rem;
+}
 
 
 /* 底部导航栏 */
