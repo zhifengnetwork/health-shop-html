@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情页</title>
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        /* 主图轮播 */
+        .slider-wrap{
+            position: relative;
+        }
+        .slider-wrap img{
+            width: 100%;
+            display: block;
+        }
+        .slider-wrap .back{
+            width: .5rem;
+            height: .5rem;
+            background: url(./images/details/back-icon-details.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            left: .24rem;
+            top: .24rem;
+            z-index: 9;
+        }
+
+        .details-container .goods-info{
+            background-color: #fff;
+            margin-bottom: .1rem;
+            padding: .15rem .44rem;
+            box-sizing: border-box;
+        }
+        .goods-info .price-bar{
+            height: .5rem;
+            font-size: .26rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .goods-info .price-bar .vip-price{
+            font-size: .28rem;
+            color: #ff0000;
+        }
+        .goods-info .price-bar .save-price{
+            font-size: .22rem;
+            color: #ff0000;
+        }
+        .goods-info .price-bar .original-price{
+            font-size: .26rem;
+        }
+        .goods-info .goods-name{
+            font-size: .24rem;
+            line-height: .36rem;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .group-wrap{
+            background-color: #fff;
+            margin-bottom: .1rem;
+            padding: .1rem .44rem;
+            box-sizing: border-box;
+        }
+        .group-line{
+            height: .5rem;
+            display: flex;
+            align-items: center;
+        }
+        .group-line .label{
+            width: .78rem;
+            margin-right: .1rem;
+        }
+        .group-line .center{
+            flex: 1;
+            margin-right: .2rem;
+        }
+        .group-line .right-arrow{
+            width: .08rem;
+            height: .14rem;
+            background: url(./images/public/right-arrow02.png) no-repeat;
+            background-size: 100%;
+        }
+
+        .tab-tit{
+            width: 100%;
+            height: 1.1rem;
+            background: #ffffff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack:distribute;
+            justify-content:space-around;
+            -webkit-box-align:center;
+            -ms-flex-align:center;
+            align-items:center;
+        }
+
+        .tab-tit .item{
+            font-size: .3rem;
+            color: #151515;
+            padding-bottom: .12rem;
+        }
+
+        .tab-tit .active{
+            color: #f70a0a;
+            border-bottom: .02rem solid #f70a0a;
+        }
+        .tab-content .tab-container{
+            display: none;
+        }
+        .tab-content .tab-container.active{
+            display: block;
+        }
+        .tab-content .tab-container img{
+            max-width: 100%;
+            display: block; 
+        }
+
+
+
+        .action-bar{
+            width: 100%;
+            height: .98rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+        .action-bar .btn{
+            height: 100%;
+            font-size: .3rem;
+            text-align: center;
+            color: #ffffff;
+        }
+        .action-bar .add-btn{
+            width: 50%;
+            line-height: .98rem;
+            background-color: #ff4d4d;
+        }
+        .action-bar .buy-btn{
+            width: 50%;
+            line-height: .98rem;
+            background-color: #f70a0a;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+         <!-- 产品主图轮播 -->
+         <div class="swiper-container slider-wrap">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/details/goods-img-big01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/details/goods-img-big01.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/details/goods-img-big01.png" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="back" onclick="returnFun()"></div>
+        </div>
+
+        <!-- 详情 -->
+        <div class="details-container">
+            <!-- 商品信息 -->
+            <div class="goods-info">
+                <div class="price-bar">
+                    <div class="price-col">会员价: <span class="vip-price">66666.00</span></div>
+                    <div class="price-col"><span class="save-price">省：1000.00</span></div>
+                    <div class="price-col">原价：<span class="original-price">70000.00</span></div>
+                </div>
+                <div class="goods-name">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</div>
+            </div>
+            
+            <!-- 配送、运费、价格 -->
+            <div class="group-wrap">
+                <div class="group-line">
+                    <div class="label">配送</div>
+                    <div class="center">广州白云区</div>
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="group-line">
+                    <div class="label">运费</div>
+                    <div class="center">免运费</div>
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="group-line">
+                    <div class="label">规格</div>
+                    <div class="center" style="text-align: right">默认规格显示 </div>
+                    <div class="right-arrow"></div>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                 <!-- 标题 -->
+                <div class="tab-tit">
+                    <div class="item active">商品详情</div>
+                    <div class="item">参数</div>
+                    <div class="item">商品评价</div>
+                </div>
+                <div class="tab-container active">
+                   <img src="./images/details/details-img.png" />
+                </div>
+                <div class="tab-container">
+                    2
+                </div>
+                <div class="tab-container">
+                    3
+                </div>
+            </div>
+
+        </div>
+
+        <div class="height-98"></div>
+        <div class="action-bar">
+            <div class="btn add-btn">加入购物车</div>
+            <div class="btn buy-btn">立即购买</div>
+        </div>
+
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        /**
+        * 产品主图轮播
+        */
+        var mySwiper = new Swiper('.slider-wrap', {
+            loop: true,
+            paginationClickable: true,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        })
+
+        /**
+        * 选项卡切换 
+        */
+        $(".tab-tit .item").click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".tab-container").removeClass("active").eq($(this).index()).addClass("active");
+        })
+    </script>
+       
+</body>
+</html>
