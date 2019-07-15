@@ -155,6 +155,121 @@
             display: block;
         }
 
+        /* 参数 */
+        .params-wrap{
+            width: 100%;
+            background-color: #fff;
+            padding:.24rem;
+            box-sizing: border-box;
+            margin: .24rem 0;
+        }
+                
+        .params-wrap .param-list li{
+            height: .58rem;
+            font-size: .26rem;
+            color: #414040;
+            display: flex;
+            align-items: center;
+            border: .01rem solid #c1c1c1;
+            border-bottom: none;
+        }  
+                        
+        .params-wrap .param-list li:last-child{
+            border-bottom: .01rem solid #c1c1c1;
+        }
+                            
+        .params-wrap .param-list li .param-name{
+            width: 1.75rem;
+            height: 100%;
+            line-height: .58rem;
+            border-right:  .01rem solid #c1c1c1;
+            padding-left: .34rem;
+            box-sizing: border-box;
+        }
+            
+        .params-wrap .param-list li .param-value{
+            flex: 1;
+            padding-left: .28rem;
+            box-sizing: border-box;
+        }
+        /* 商品评论 */   
+        .comment-list li{
+            color: #4a4949;
+            background-color: #ffffff;
+            border-radius: .08rem;
+            margin-bottom: .1rem;
+            padding: .14rem .44rem;
+            box-sizing: border-box;
+        }
+                        
+        .comment-list li .eval-user{
+            height: .6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .2rem;
+        }
+        .comment-list li .eval-user .user{
+            display: flex;
+            align-items: center;
+        }
+                                
+        .comment-list li .eval-user .user .avatar{
+            width: .6rem;
+            height: .6rem;
+            margin-right: .2rem;
+        }
+        .comment-list li .eval-user .user .avatar img {
+            width: 100%;
+            display: block;
+        }
+        .comment-list li .eval-user .score{
+            display: flex;
+        }
+        .comment-list li .eval-user .score .like-icon{
+            width: .27rem;
+            height: .24rem;
+            display: inline-block;
+            margin: 0 .1rem;
+            background: url(./images/details/like-icon.png) no-repeat;
+            background-size: 100%;
+        }
+        .comment-list li .eval-user .score .on{
+            background: url(./images/details/like-icon-on.png) no-repeat;
+            background-size: 100%;
+        }
+   
+
+        .comment-list li .eval-user .user .text{
+            font-size: .2rem;
+        }
+                                    
+        .comment-list li .eval-user .user .text span {
+            display: block;
+            line-height: .3rem;
+        }
+        .comment-list li .eval-user .user .text .date{
+            font-size: .18rem;
+            color: #999 ;
+        }
+        .comment-list li .eval-content{
+            margin-bottom: .1rem;
+        }                                
+        .comment-list li .eval-content p{
+            font-size: .2rem;
+        }
+        .imgView span{
+            width: 1rem;
+            height: 1rem;
+            margin-right: .2rem;
+            border-radius: .08rem;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .imgView span img{
+            width: 100%;
+        }
+                
         .action-bar {
             width: 100%;
             height: .98rem;
@@ -256,10 +371,148 @@
                     <img src="./images/details/details-img.png" />
                 </div>
                 <div class="tab-container">
-                    2
+                    <div class="params-wrap">
+                        <ul class="param-list">
+                            <li>
+                                <div class="param-name">商品编号 </div>
+                                <div class="param-value">55666666</div>
+                            </li>
+                            <li>
+                                <div class="param-name">面料</div>
+                                <div class="param-value">蕾丝</div>
+                            </li>
+                            <li>
+                                <div class="param-name">使用尺寸</div>
+                                <div class="param-value">S M L XL</div>
+                            </li>
+                            <li>
+                                <div class="param-name">款式</div>
+                                <div class="param-value">中长款</div>
+                            </li>
+                            <li>
+                                <div class="param-name">风格</div>
+                                <div class="param-value">其他</div>
+                            </li>
+                            <li>
+                                <div class="param-name">图案</div>
+                                <div class="param-value">碎花</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="tab-container">
-                    3
+                    <div class="comment-wrap">
+                        <ul class="comment-list">
+                            <li>
+                                <div class="eval-user">
+                                    <div class="user">
+                                        <div class="avatar">
+                                            <img src="./images/user/acatav-img.png" />
+                                        </div>
+                                        <div class="text">
+                                            <span class="name">小腊肉</span>
+                                            <span class="date">2019-05-06</span>
+                                        </div>
+                                    </div>
+                                    <div class="score">
+                                        <span class="like-icon on"></span>
+                                        <span class="like-icon on"></span>
+                                        <span class="like-icon on"></span>
+                                        <span class="like-icon on"></span>
+                                     </div>
+                                </div> 
+                                <div class="eval-content">
+                                    <p>你的衣服最好的 快递也好快</p>
+                                </div>
+                                <div class="imgView">
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="eval-user">
+                                    <div class="user">
+                                        <div class="avatar">
+                                            <img src="./images/user/acatav-img.png" />
+                                        </div>
+                                        <div class="text">
+                                            <span class="name">小腊肉</span>
+                                            <span class="date">2019-05-06</span>
+                                        </div>
+                                    </div>
+                                    <div class="score">
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon"></span>
+                                    </div>
+                                </div> 
+                                <div class="eval-content">
+                                    <p>你的衣服最好的 快递也好快</p>
+                                </div>
+                                <div class="imgView">
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="eval-user">
+                                    <div class="user">
+                                        <div class="avatar">
+                                            <img src="./images/user/acatav-img.png" />
+                                        </div>
+                                        <div class="text">
+                                            <span class="name">小腊肉</span>
+                                            <span class="date">2019-05-06</span>
+                                        </div>
+                                    </div>
+                                    <div class="score">
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon"></span>
+                                    </div>
+                                </div> 
+                                <div class="eval-content">
+                                    <p>你的衣服最好的 快递也好快</p>
+                                </div>
+                                <div class="imgView">
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="eval-user">
+                                    <div class="user">
+                                        <div class="avatar">
+                                            <img src="./images/user/acatav-img.png" />
+                                        </div>
+                                        <div class="text">
+                                            <span class="name">小腊肉</span>
+                                            <span class="date">2019-05-06</span>
+                                        </div>
+                                    </div>
+                                    <div class="score">
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon on"></span>
+                                       <span class="like-icon"></span>
+                                    </div>
+                                </div> 
+                                <div class="eval-content">
+                                    <p>你的衣服最好的 快递也好快</p>
+                                </div>
+                                <div class="imgView">
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                    <span><img src="./images/details/evaluation-img01.png"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

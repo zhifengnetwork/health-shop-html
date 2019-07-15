@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交评价</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        .content {
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+
+        .evaluate-wrap {
+            width: 100%;
+            border: .01rem solid #a7a7a7;
+            border-radius: .08rem;
+            padding: .3rem;
+            box-sizing: border-box;
+        }
+
+        .textBox {
+            width: 100%;
+            margin-bottom: .2rem;
+        }
+
+        .textBox textarea {
+            width: 100%;
+            height: 2rem;
+            font-size: .26rem;
+            color: #888888;
+            border: none;
+            background: none;
+            resize: none;
+            font-family: "微软雅黑"
+        }
+
+        .addPic {
+            width: 1.2rem;
+            height: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: .26rem;
+            color: #888888;
+            border: .01rem dashed #595959;
+            border-radius: .05rem;
+            position: relative;
+        }
+
+        .camera-icon {
+            width: .46rem;
+            height: .38rem;
+            display: block;
+            background: url("../images/order/camera-icon.png") no-repeat;
+            background-size: cover;
+            margin-bottom: .2rem;
+        }
+
+        .input-file {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+
+        .rate-wrap h2 {
+            font-size: .3rem;
+            margin: .3rem auto .7rem;
+        }
+
+        .rate-item {
+            font-size:.3rem;
+            height: .36rem;
+            line-height: .3rem;
+            display: flex;
+            margin-bottom: .4rem;
+        }
+
+        .rate-item .label {
+            margin-right: .44rem;
+        }
+
+        .btn {
+            width: 92%;
+            height: .88rem;
+            line-height: .88rem;
+            color: #ffffff;
+            font-size: .3rem;
+            text-align: center;
+            background-color: #ff4d4d;
+            border-radius: .4rem;
+            position: fixed;
+            left: 50%;
+            bottom: .68rem;
+            margin-left: -46%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="backBtn" onclick="returnFun()"><img src="../images/category/back-icon.png" /></div>
+            <div class="title">提交评价</div>
+        </div>
+        <div class="height-88"></div>
+
+        <div class="content">
+            <div class="evaluate-wrap">
+                <!-- 评价框 -->
+                <div class="textBox">
+                    <textarea placeholder="物流真快"></textarea>
+                </div>
+                <!-- 添加图片 -->
+                <div class="addPic">
+                    <span class="camera-icon"></span>
+                    <span>添加图片</span>
+                    <input type="file" class="input-file" multiple="multiple" accept="image/gif,image/jpeg,image/jpg,image/png" >
+                </div>
+            </div>
+
+            <div class="rate-wrap">
+                <h2>商品评分</h2>
+                <div class="rate-item">
+                    <div class="label">描述相符</div>
+                </div>
+
+            </div>
+
+            <div class="btn">发布评价</div>
+        </div>
+
+
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/public.js"></script>
+
+</body>
+
+</html>
