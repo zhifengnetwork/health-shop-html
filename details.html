@@ -9,6 +9,7 @@
     <script src="./js/rem.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ydui.css"/>
     <link rel="stylesheet" href="./css/base.css">
     <style>
         /* 主图轮播 */
@@ -105,7 +106,10 @@
             flex: 1;
             margin-right: .2rem;
         }
-
+        .group-line .center .cell-input{
+            width:100%;
+            font-family:'微软雅黑';
+        }
         .group-line .right-arrow {
             width: .08rem;
             height: .14rem;
@@ -224,7 +228,9 @@
             <div class="group-wrap">
                 <div class="group-line">
                     <div class="label">配送</div>
-                    <div class="center">广州白云区</div>
+                    <div class="center" >
+                        <input type="text" class="cell-input" readonly id="J_Address" value="广东 广州市 白云区" placeholder="请选择收货地址">
+                    </div>
                     <div class="right-arrow"></div>
                 </div>
                 <div class="group-line">
@@ -269,6 +275,10 @@
     <script src="./js/jquery-1.8.3.min.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/public.js"></script>
+    <!-- 地址联动 -->
+    <script src="js/ydui.citys.js"></script>
+    <script src="js/ydui.js"></script>
+
     <script>
         /**
         * 产品主图轮播
@@ -283,6 +293,25 @@
                 clickable: true,
             },
         })
+
+        /**
+        * 地址联动 设置默认值
+        */
+        !function() {
+            var $target = $('#J_Address');
+            $target.citySelect({
+                provance: '广东',
+                city: '广州市',
+                area: '白云区'
+            });
+            $target.on('click', function(event) {
+                event.stopPropagation();
+                $target.citySelect('open');
+            });
+            $target.on('done.ydui.cityselect', function(ret) {
+                $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+            });
+        }();
 
         /**
         * 选项卡切换 
