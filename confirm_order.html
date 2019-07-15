@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>确认订单</title>
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .content{
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+        .address{
+            width: 100%;
+            background-color: #fff;
+            border-radius: .08rem;
+            padding: .2rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: .1rem;
+        }
+        .address .address-icon{
+            width: .41rem;
+            margin-right: .5rem;
+        }
+        .address .address-icon img{
+            width: 100%;
+        }
+        .address .main{
+            flex: 1;
+        }
+        .address .user-info{
+            font-size: .28rem;
+            margin-bottom: .2rem;
+        }
+        .address .user-info .name{
+            margin-right: .4rem;
+        }
+        .address .user-info  .exact-address{
+            font-size: .24rem;
+            color: #555555;
+        }
+        .address .edit-btn{
+            width: .22rem;
+            height: .22rem;
+            background: url(./images/edit-icon.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            right: .2rem;
+            top: .2rem;
+        }
+        .order-info{
+            background-color: #ffffff;
+            border-radius: .08rem;
+            padding: .2rem;
+            box-sizing: border-box;
+        }
+        .goods-item{
+            height: 2.2rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: .3rem;
+            
+        }
+        .goods-item .img-wrap {
+            width: 2.2rem;
+            height: 2.2rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: .3rem;
+        }
+
+        .goods-item .img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        .goods-item .main {
+            flex: 1;
+        }
+        .goods-item .main .goodsName{
+            color: #151515;
+            font-size: .28rem;
+            line-height: .4rem;
+            font-weight: normal;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin-bottom: .25rem;
+        }
+
+        .goods-item .main .specs {
+            margin-bottom: .1rem;
+            color: #ccc;
+        }
+
+        .goods-item  .price{
+            font-size: .24rem;
+            margin-right: .5rem;
+
+        }
+
+        .goods-item .main .goodsNum {
+            font-size: .24rem;
+            color: #151515;
+        }
+        .group-wrap{
+            width: 4.5rem;
+            margin: 0 auto;
+        }
+        .group-wrap .group-line{
+            margin-bottom: .3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .group-wrap .group-line .sub-title{
+            font-size: .26rem;
+            margin-right: .25rem;
+        }
+        .group-wrap .group-line .msg{
+            font-size: .24rem;
+            color: #999999;
+            margin-right: 1rem;
+        }
+        .group-wrap .group-line .freight{
+            font-size: .24rem;
+        }
+        .group-wrap .group-line .note-val{
+            flex: 1;
+            font-size: .2rem;
+            line-height: .3rem;
+            border-bottom: .01rem solid #e9e9e9;
+       }
+       .group-wrap .total-wrap{
+           display: flex;
+           align-items: center;
+           justify-content: flex-end;
+           color: #151515;
+       }
+       .group-wrap .total-wrap .total-num{
+           color: #9d9d9d;
+           font-size: .26rem;
+       }
+       .group-wrap .total-wrap .total-price{
+           color: #ff112f;
+           font-size: .3rem;
+           margin-left: .35rem;
+       }
+       .action-bar{
+           width: 100%;
+           height: 1.2rem;
+           border-top: .01rem solid #e3e3e3;
+           background-color: #fff;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           position: fixed;
+           left: 0;
+           bottom: 0;
+       }
+       .action-bar .disbursements{
+           font-size: .3rem;
+           padding-left: .24rem;
+           box-sizing: border-box;
+       }
+       .action-bar i{
+           font-style: normal;
+           font-size: .2rem;
+       }
+       .action-bar .disbursements .price{
+           font-size: .36rem;
+           color: #f70a0a;
+       }
+       .action-bar .discount{
+           font-size: .24rem;
+       }
+       .action-bar .discount span{
+           font-size: .3rem;
+       }
+       .action-bar .payment-btn{
+            width: 2.18rem;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            text-align: center;
+            color: #fff;
+            font-size: .3rem;
+            background-color: #f70a0a;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="backBtn" onclick="returnFun()"><img src="./images/category/back-icon.png" /></div>
+            <div class="title">确认订单</div>
+        </div>
+        <div class="height-88"></div>
+
+        <div class="content">
+            <!-- 地址 -->
+            <div class="address">
+                <div class="address-icon">
+                    <img src="./images/address-icon.png" />
+                </div>
+                <div class="main">
+                    <div class="user-info">
+                        <span class="name">小腊肉</span>
+                        <span class="tel">18000001882</span>
+                    </div>
+                    <div class="exact-address">广东省广州市白云区嘉禾汇726</div>
+                </div>
+                <div class="edit-btn"></div>
+            </div>
+
+            <!-- 订单信息 -->
+            <div class="order-info">
+                <a href="./details.html">
+                    <div class="goods-item">
+                        <div class="img-wrap">
+                            <img src="./images/order/order-img01.png" />
+                        </div>
+                        <div class="main">
+                            <h3 class="goodsName">商品简介商品简介商品简介商品商品简介</h3>
+                            <p class="specs">规格:xxx</p>
+                            <p>
+                                <span class="price">￥82.00</span>
+                                <span class="goodsNum">x 2</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <div class="group-wrap">
+                    <div class="group-line">
+                        <span class="sub-title">配送方式</span>
+                        <span class="msg">普通配送</span>
+                        <span class="freight">免运费</span>
+                    </div>
+                    <div class="group-line">
+                        <span class="sub-title">订单备注</span>
+                        <input type="text" class="note-val" placeholder="选填 请先和商家协商一致" />  
+                    </div>
+                    
+                    <div class="total-wrap">
+                        <span class="total-num">共 2 件:</span>
+                        <span>共计：</span>
+                        <span class="total-price">￥ 7720.00</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="action-bar">
+            <div class="disbursements">实付款:<span class="price"> <i>¥</i>7720.00</span></div>
+            <div class="discount">会员优惠:<span> <i>¥</i>10.00</span></div>
+            <a href="#"><div class="payment-btn">立即购买</div></a>
+        </div>
+
+
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/public.js"></script>
+
+</body>
+
+</html>
