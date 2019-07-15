@@ -17,11 +17,16 @@
             width: 7.02rem;
             height: .5rem;
             border-radius: .2rem;
-            display:flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             margin: .1rem auto .2rem;
             border: .01rem solid #6a6a6a;
             padding: 0 .18rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
@@ -124,9 +129,18 @@
         .rush-vip .vip-container {
             height: 1.72rem;
             font-size: .3rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
         }
 
@@ -141,9 +155,14 @@
         /* 首页公共标题 */
         .headline {
             height: .9rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             padding: 0 .24rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
@@ -163,14 +182,15 @@
         }
 
         /* 超值大礼包 */
-        .gift-area .gift-list{
+        .gift-area .gift-list {
             padding: .2rem 0;
         }
 
         .gift-list .swiper-slide {
             width: 65%;
         }
-        .gift-area .gift-list .single-item .top{
+
+        .gift-area .gift-list .single-item .top {
             overflow: hidden;
             padding: .1rem;
             box-sizing: border-box;
@@ -178,40 +198,50 @@
             box-shadow: 0 0 .08rem #999;
             border-radius: .1rem;
         }
+
         .gift-area .gift-list .single-item .img-wrap {
             width: 98%;
             height: 3.6rem;
             overflow: hidden;
             background: #efefef;
             margin: 0 auto;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
         }
+
         .gift-area .gift-list .single-item .img-wrap img {
             max-width: 100%;
             width: 2.8rem;
         }
+
         .gift-area .gift-list .single-item .main {
             width: 100%;
             height: 3.1rem;
             padding: .1rem;
             box-sizing: border-box;
         }
-        .gift-area .gift-list .single-item .main .goods-name{
+
+        .gift-area .gift-list .single-item .main .goods-name {
             line-height: .6rem;
             color: #151515;
             font-size: .28rem;
             text-align: center;
         }
 
-        .gift-area .gift-list .single-item .main .price{
+        .gift-area .gift-list .single-item .main .price {
             font-size: .24rem;
             line-height: .4rem;
             text-align: center;
         }
 
-        .gift-area .gift-list .single-item .main .dec{
+        .gift-area .gift-list .single-item .main .dec {
             line-height: .34rem;
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -240,7 +270,6 @@
             color: #ffffff;
             margin: .15rem auto;
         }
-
     </style>
 </head>
 
@@ -333,7 +362,9 @@
                                     <p class="price">原价:<span class="original-price">22692.00</span>元</p>
                                     <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
                                     <p class="price">省:<span class="save-money">6520.00</span>元</p>
-                                    <a href="#"><p class="see-btn">查看</p></a>
+                                    <a href="#">
+                                        <p class="see-btn">查看</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="buy-btn">
@@ -355,7 +386,9 @@
                                     <p class="price">原价:<span class="original-price">22692.00</span>元</p>
                                     <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
                                     <p class="price">省:<span class="save-money">6520.00</span>元</p>
-                                    <a href="#"><p class="see-btn">查看</p></a>
+                                    <a href="#">
+                                        <p class="see-btn">查看</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="buy-btn">
@@ -377,7 +410,9 @@
                                     <p class="price">原价:<span class="original-price">22692.00</span>元</p>
                                     <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
                                     <p class="price">省:<span class="save-money">6520.00</span>元</p>
-                                    <a href="#"><p class="see-btn">查看</p></a>
+                                    <a href="#">
+                                        <p class="see-btn">查看</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="buy-btn">
@@ -399,7 +434,9 @@
                                     <p class="price">原价:<span class="original-price">22692.00</span>元</p>
                                     <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
                                     <p class="price">省:<span class="save-money">6520.00</span>元</p>
-                                    <a href="#"><p class="see-btn">查看</p></a>
+                                    <a href="#">
+                                        <p class="see-btn">查看</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="buy-btn">
@@ -421,7 +458,9 @@
                                     <p class="price">原价:<span class="original-price">22692.00</span>元</p>
                                     <p class="price">会员价:<span class="vip-price">12692.00</span>元</p>
                                     <p class="price">省:<span class="save-money">6520.00</span>元</p>
-                                    <a href="#"><p class="see-btn">查看</p></a>
+                                    <a href="#">
+                                        <p class="see-btn">查看</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="buy-btn">
@@ -528,4 +567,5 @@
     })
 
 </script>
+
 </html>

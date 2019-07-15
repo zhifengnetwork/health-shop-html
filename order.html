@@ -16,10 +16,17 @@
             height: .7rem;
             line-height: .7rem;
             font-size: .28rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
             padding: 0 .24rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             margin-bottom: .2rem;
         }
@@ -40,9 +47,11 @@
             box-sizing: border-box;
             display: none;
         }
-        .tab-con.active{
+
+        .tab-con.active {
             display: block;
         }
+
         /* 单个订单 */
         .tab-con .item-card {
             background-color: #ffffff;
@@ -54,10 +63,17 @@
         .item-card .card-head {
             height: .55rem;
             border-bottom: .02rem solid #e6e6e6;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
             padding: 0 .36rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
@@ -72,8 +88,11 @@
         }
 
         .item-card .goods-item {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             padding: .17rem .38rem .1rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
@@ -89,6 +108,8 @@
         }
 
         .item-card .goods-item .text {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1;
         }
 
@@ -107,7 +128,11 @@
         .item-card .goods-item .text .good-sku {
             color: #151515;
             font-size: .24rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
         }
 
@@ -118,11 +143,18 @@
         .item-card .total-bar {
             height: .4rem;
             color: #6f6f6f;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
             justify-content: flex-end;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             margin-bottom: .1rem;
             padding: 0 .38rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
@@ -149,9 +181,14 @@
 
 
         .item-card .order-btn {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
             justify-content: flex-end;
             padding: 0 .38rem .36rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
 
@@ -327,7 +364,7 @@
         /**
          *  选项卡切换 
          */
-        $(".tab-tit li").click(function(){
+        $(".tab-tit li").click(function () {
             $(this).addClass('active').siblings().removeClass('active');
             $(".tab-con").removeClass("active").eq($(this).index()).addClass("active");
         })

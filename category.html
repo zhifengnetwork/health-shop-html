@@ -25,7 +25,7 @@
             width: 100%;
         }
 
-        .content{
+        .content {
             padding: 0 .24rem;
             box-sizing: border-box;
         }
@@ -36,9 +36,10 @@
             height: .6rem;
             width: 100%;
             overflow: hidden;
-            margin:.2rem auto;
+            margin: .2rem auto;
             background: #ffffff;
         }
+
         .nav-slide .scroller {
             position: absolute
         }
@@ -64,54 +65,78 @@
             overflow: hidden;
         }
 
-        .goods-list .single-item{
+        .goods-list .single-item {
             background-color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             padding: .2rem .24rem;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             border-radius: .1rem;
             margin-bottom: .1rem;
         }
-        .goods-list .single-item .img-wrap{
+
+        .goods-list .single-item .img-wrap {
             width: 2.2rem;
             height: 2.2rem;
             border-radius: .05rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             margin-right: .26rem;
         }
-        .goods-list .single-item .img-wrap img{
+
+        .goods-list .single-item .img-wrap img {
             max-width: 100%;
         }
-        .goods-list .single-item .main{
+
+        .goods-list .single-item .main {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1;
         }
-        .goods-list .single-item .main .goods-name{
+
+        .goods-list .single-item .main .goods-name {
             color: #151515;
             line-height: .38rem;
             font-weight: normal;
-            overflow: hidden;  
-            display: -webkit-box;    
-            -webkit-line-clamp: 2;     
-            -webkit-box-orient: vertical; 
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
-        .goods-list .single-item .main .price{
-            color:#f90a0a;
+
+        .goods-list .single-item .main .price {
+            color: #f90a0a;
             line-height: .84rem;
         }
-        .goods-list .single-item .main .buy{
+
+        .goods-list .single-item .main .buy {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
         }
-        .goods-list .single-item .main .buy .add-cart{
+
+        .goods-list .single-item .main .buy .add-cart {
             width: .32rem;
             height: .3rem;
-            margin-left: .15rem;;
+            margin-left: .15rem;
+            ;
             background: url(./images/category/add-cart.png) no-repeat;
             background-size: 100%;
         }
-        .goods-list .single-item .main .buy .buy-btn{
+
+        .goods-list .single-item .main .buy .buy-btn {
             width: 1.5rem;
             height: .4rem;
             line-height: .4rem;
@@ -120,10 +145,6 @@
             border: .01rem solid #ff4d4d;
             color: #f90a0a;
         }
-
-
-
-        
     </style>
 </head>
 
@@ -151,7 +172,7 @@
             <!-- <div class="swiper-pagination"></div> -->
         </div>
 
-       <div class="content">
+        <div class="content">
             <!-- 导航滑动 -->
             <div class="nav-slide" id="nav-slide">
                 <div class="scroller">
@@ -167,14 +188,16 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="goods-list">
                 <div class="single-item">
                     <div class="img-wrap">
                         <img src="./images/home/gift-goods-img01.png" />
                     </div>
                     <div class="main">
-                        <a href="#"><h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3></a>
+                        <a href="#">
+                            <h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3>
+                        </a>
                         <p class="price">￥55262.00</p>
                         <div class="buy">
                             <span class="add-cart"></span>
@@ -187,7 +210,9 @@
                         <img src="./images/home/gift-goods-img01.png" />
                     </div>
                     <div class="main">
-                        <a href="#"><h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3></a>
+                        <a href="#">
+                            <h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3>
+                        </a>
                         <p class="price">￥55262.00</p>
                         <div class="buy">
                             <span class="add-cart"></span>
@@ -200,7 +225,9 @@
                         <img src="./images/home/gift-goods-img01.png" />
                     </div>
                     <div class="main">
-                        <a href="#"><h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3></a>
+                        <a href="#">
+                            <h3 class="goods-name">商品简介商品简介商品简介商品简介商品简介</h3>
+                        </a>
                         <p class="price">￥55262.00</p>
                         <div class="buy">
                             <span class="add-cart"></span>
@@ -210,11 +237,11 @@
                 </div>
             </div>
 
-       </div>
+        </div>
 
-       <div class="height-98"></div>
-       <!-- 底部导航栏 -->
-       <div class="footer">
+        <div class="height-98"></div>
+        <!-- 底部导航栏 -->
+        <div class="footer">
             <ul>
                 <li>
                     <a href="./index.html">

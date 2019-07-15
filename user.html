@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <style>
-        .topHeader{
+        .topHeader {
             width: 100%;
             height: 2.9rem;
             color: #ffffff;
@@ -23,34 +23,48 @@
             position: relative;
             margin-bottom: .2rem;
         }
-        .topHeader .user-info{
-            padding:.28rem 0;
+
+        .topHeader .user-info {
+            padding: .28rem 0;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
         }
-        .topHeader .user-info .avatar{
+
+        .topHeader .user-info .avatar {
             width: 1.1rem;
             height: 1.1rem;
             border-radius: 50%;
             margin-right: .24rem;
         }
-        .topHeader .user-info .avatar img{
+
+        .topHeader .user-info .avatar img {
             width: 100%;
         }
-        .topHeader .user-info .user-msg{
+
+        .topHeader .user-info .user-msg {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
             flex: 1;
             font-size: .26rem;
         }
-        .topHeader .user-info .user-msg .user-name{
+
+        .topHeader .user-info .user-msg .user-name {
             line-height: .6rem;
             font-size: .3rem;
         }
-        .topHeader .user-info .user-msg .user-id{
+
+        .topHeader .user-info .user-msg .user-id {
             font-size: .26rem;
             margin-left: .28rem;
         }
-        .topHeader .user-info .user-msg .tag{
+
+        .topHeader .user-info .user-msg .tag {
             width: .32rem;
             height: .24rem;
             margin-right: .16rem;
@@ -59,7 +73,8 @@
             background: url(./images/user/vip-tag.png) no-repeat;
             background-size: 100%;
         }
-        .topHeader .set-up{
+
+        .topHeader .set-up {
             width: .28rem;
             height: .28rem;
             background: url(./images/user/set-up-icon.png) no-repeat;
@@ -68,7 +83,8 @@
             right: .2rem;
             top: .2rem;
         }
-        .topHeader .account-balance{
+
+        .topHeader .account-balance {
             width: 100%;
             height: 1.18rem;
             border-radius: .08rem;
@@ -76,16 +92,27 @@
             font-size: .26rem;
             text-align: center;
             color: #151515;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
         }
-        .topHeader .account-balance .money{
+
+        .topHeader .account-balance .money {
             font-size: .3rem;
             color: #f30e3f;
         }
-        .topHeader .account-balance .right-arrow{
+
+        .topHeader .account-balance .right-arrow {
             width: .1rem;
             height: .16rem;
             display: inline-block;
@@ -93,13 +120,13 @@
             background-size: 100%;
         }
 
-        .content{
+        .content {
             padding: 0 .24rem;
             box-sizing: border-box;
         }
 
         /* 公共标题 */
-        .headline{
+        .headline {
             width: 100%;
             height: .6rem;
             color: #333333;
@@ -112,14 +139,16 @@
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
-            border-bottom: .01rem solid #e5e5e5; 
+            border-bottom: .01rem solid #e5e5e5;
         }
-        .headline h3{
+
+        .headline h3 {
             font-size: .28rem;
             font-weight: normal;
             color: #151515;
         }
-        .headline .more{
+
+        .headline .more {
             min-width: .08rem;
             min-height: .14rem;
             color: #525252;
@@ -131,8 +160,8 @@
 
 
         /* 我的订单 */
-        .order-area{
-            width:100%;
+        .order-area {
+            width: 100%;
             background-color: #fff;
             border-radius: .12rem;
             margin-bottom: .3rem;
@@ -140,7 +169,7 @@
             box-sizing: border-box;
         }
 
-        .order-area .list{
+        .order-area .list {
             height: 1.14rem;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -152,13 +181,15 @@
             -ms-flex-pack: center;
             justify-content: center;
         }
-        .order-area .list .item{
+
+        .order-area .list .item {
             width: 25%;
             font-size: .22rem;
             text-align: center;
             position: relative;
         }
-        .order-area .list .item .num{
+
+        .order-area .list .item .num {
             width: .2rem;
             height: .2rem;
             text-align: center;
@@ -172,51 +203,68 @@
             position: absolute;
             right: .2rem;
             top: -.08rem;
-            
+
         }
-        .order-area .list .item a{
+
+        .order-area .list .item a {
             color: #333333;
         }
-        .order-area .list .item span.icon{
+
+        .order-area .list .item span.icon {
             width: .48rem;
             height: .48rem;
             display: block;
             margin: 0 auto .1rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
         }
-        .order-area .list .item span.icon img{
+
+        .order-area .list .item span.icon img {
             max-width: 100%;
             max-height: 100%;
         }
 
         /* 链接列表 */
-        .link-list{
+        .link-list {
             background-color: #fff;
             border-radius: .08rem;
             padding: 0 .2rem;
             box-sizing: border-box;
         }
-        .link-list .link-item{
+
+        .link-list .link-item {
             height: .8rem;
             font-size: .28rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
             color: #525252;
             border-bottom: .01rem solid #e6e6e6;
         }
-        .link-list .link-item.border-none{
+
+        .link-list .link-item.border-none {
             border-bottom: none;
         }
-        .link-list .link-item .more{
+
+        .link-list .link-item .more {
             min-width: .08rem;
             min-height: .14rem;
             background: url(./images/user/right-arrow02.png) no-repeat right center;
             background-size: .08rem .14rem;
         }
-        
     </style>
 </head>
 
@@ -254,44 +302,44 @@
                     <div class="item">
                         <a href="#">
                             <span class="icon">
-                                <img src="./images/user/dfk-icon.png"/>
+                                <img src="./images/user/dfk-icon.png" />
                             </span>
                             <span>待付款</span>
                             <span class="num">10</span>
                         </a>
-                    </div>    
+                    </div>
                     <div class="item">
                         <a href="#">
                             <span class="icon">
-                                <img src="./images/user/dfh-icon.png"/>
+                                <img src="./images/user/dfh-icon.png" />
                             </span>
                             <span>待发货</span>
                         </a>
-                    </div>    
+                    </div>
                     <div class="item">
                         <a href="#">
                             <span class="icon">
-                                <img src="./images/user/dsh-icon.png"/>
+                                <img src="./images/user/dsh-icon.png" />
                             </span>
                             <span>待收货</span>
                         </a>
-                    </div>    
+                    </div>
                     <div class="item">
                         <a href="#">
                             <span class="icon">
-                                <img src="./images/user/dpj-icon.png"/>
+                                <img src="./images/user/dpj-icon.png" />
                             </span>
                             <span>待评价</span>
                         </a>
-                    </div>    
+                    </div>
                     <div class="item">
                         <a href="#">
                             <span class="icon">
-                                <img src="./images/user/shfw-icon.png"/>
+                                <img src="./images/user/shfw-icon.png" />
                             </span>
                             <span>售后服务</span>
                         </a>
-                    </div>              
+                    </div>
                 </div>
             </div>
 
@@ -323,42 +371,42 @@
             </div>
 
         </div>
-        
+
 
         <div class="height-98"></div>
         <!-- 底部导航栏 -->
         <div class="footer">
-                <ul>
-                    <li>
-                        <a href="./index.html">
-                            <i class="home-icon"></i>
-                            <span class="text">首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./category.html">
-                            <i class="category-icon"></i>
-                            <span class="text">分类</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./cart.html">
-                            <i class="cart-icon"></i>
-                            <span class="text">购物车</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="./user.html">
-                            <i class="user-icon"></i>
-                            <span class="text">我的</span>
-                        </a>
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <i class="home-icon"></i>
+                        <span class="text">首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <i class="category-icon"></i>
+                        <span class="text">分类</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./cart.html">
+                        <i class="cart-icon"></i>
+                        <span class="text">购物车</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="./user.html">
+                        <i class="user-icon"></i>
+                        <span class="text">我的</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
     <script src="./js/jquery-1.8.3.min.js"></script>
     <script>
-     
+
     </script>
 </body>
 
