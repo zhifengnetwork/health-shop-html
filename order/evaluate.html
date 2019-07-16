@@ -9,6 +9,7 @@
     <title>提交评价</title>
     <script src="../js/rem.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/score/application.css">
     <link rel="stylesheet" href="../css/base.css">
     <style>
         .content {
@@ -89,6 +90,9 @@
         .rate-item .label {
             margin-right: .44rem;
         }
+        .rate-item img{
+            width: .27rem;
+        }
 
         .btn {
             width: 92%;
@@ -134,8 +138,17 @@
                 <h2>商品评分</h2>
                 <div class="rate-item">
                     <div class="label">描述相符</div>
+                    <div class="score1"></div>
                 </div>
-
+                <div class="rate-item">
+                    <div class="label">物流服务</div>
+                    <div class="score2"></div>
+                </div>
+                <div class="rate-item">
+                    <div class="label">服务态度</div>
+                    <div class="score3"></div>
+                </div>
+                
             </div>
 
             <div class="btn">发布评价</div>
@@ -143,9 +156,36 @@
 
 
     </div>
-    <script src="../js/jquery-1.8.3.min.js"></script>
+    <!-- <script src="../js/jquery-1.8.3.min.js"></script> -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.raty.js"></script>
     <script src="../js/public.js"></script>
-
+    <script>
+        $('.score1').raty({ 
+            number:5,
+            score:0,
+            showHalf:true,
+            path: '../images/order',
+            starOff: 'love.png',
+            starOn: 'love-on.png'
+        });
+        $('.score2').raty({ 
+            number:5,
+            score:0,
+            showHalf:true,
+            path: '../images/order',
+            starOff: 'love.png',
+            starOn: 'love-on.png'
+        });
+        $('.score3').raty({ 
+            number:5,
+            score:0,
+            showHalf:true,
+            path: '../images/order',
+            starOff: 'love.png',
+            starOn: 'love-on.png'
+        });
+    </script>
 </body>
 
 </html>
