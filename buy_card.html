@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购买会员卡-确认订单</title>
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .content{
+            padding: 0 .24rem;
+            box-sizing: border-box;
+        }
+        .card{
+            width: 7.02rem;
+            height: 3rem;
+            background: url(./images/card-bg.png) no-repeat;
+            background-size: 100%;
+            position: relative;
+            margin-bottom: .4rem;
+        }
+        .card .card-number{
+            font-size: .26rem;
+            color: #867759;
+            position: absolute;
+            right: .5rem;
+            bottom: .3rem;
+        }
+       /* 支付方式 */
+       .payment-method{
+           width: 100%;
+           background-color: #fff;
+           border-radius: .08rem;
+           padding: .1rem .24rem;
+           box-sizing: border-box;
+       }
+       .payment-method .method-item{
+           width: 100%;
+           height: .6rem;
+           font-size: .3rem;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+       }
+       .payment-method .method-item .sub-title{
+           flex: 1;
+       }
+       .payment-method .method-item .check input {
+            width: .4rem;
+            height: .4rem;
+            background: url(./images/unselected-dot.png) no-repeat;
+            background-size: .4rem .4rem;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            display: inline-block;
+        }
+
+        .payment-method .method-item .check input:checked::after {
+            width: .4rem;
+            height: .4rem;
+            content: '';
+            background: url(./images/selected-dot.png) no-repeat center center;
+            background-size: .4rem .4rem;
+            display: inline-block;
+        }
+       .action-bar{
+           width: 100%;
+           height: 1.2rem;
+           border-top: .01rem solid #e3e3e3;
+           background-color: #fff;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           position: fixed;
+           left: 0;
+           bottom: 0;
+       }
+       .action-bar .disbursements{
+           font-size: .3rem;
+           padding-left: .24rem;
+           box-sizing: border-box;
+       }
+       .action-bar i{
+           font-style: normal;
+           font-size: .2rem;
+       }
+       .action-bar .disbursements .price{
+           font-size: .36rem;
+           color: #f70a0a;
+       }
+       .action-bar .discount{
+           font-size: .24rem;
+       }
+       .action-bar .discount span{
+           font-size: .3rem;
+       }
+       .action-bar .payment-btn{
+            width: 2.18rem;
+            height: 1.2rem;
+            line-height: 1.2rem;
+            text-align: center;
+            color: #fff;
+            font-size: .3rem;
+            background-color: #f70a0a;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="backBtn" onclick="returnFun()"><img src="./images/category/back-icon.png" /></div>
+            <div class="title">确认订单</div>
+        </div>
+        <div class="height-88"></div>
+
+        <div class="content">
+            <div class="card">
+                <div class="card-number">NO:12345 67890</div>
+            </div>
+            <!-- 支付方式 -->
+            <div class="payment-method">
+                <div class="method-item">
+                    <label for="integral" class="sub-title">我的积分 : 50000</label>
+                    <div class="check">
+                        <input type="checkbox" checked id="integral">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="action-bar">
+            <div class="disbursements">实付款:<span class="price"> <i>¥</i>7720.00</span></div>
+            <div class="discount">会员优惠:<span> <i>¥</i>10.00</span></div>
+            <a href="#"><div class="payment-btn">立即购买</div></a>
+        </div>
+
+
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/public.js"></script>
+
+</body>
+
+</html>

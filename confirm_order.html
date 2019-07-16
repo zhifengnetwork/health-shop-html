@@ -61,6 +61,7 @@
             border-radius: .08rem;
             padding: .2rem;
             box-sizing: border-box;
+            margin-bottom: .1rem;
         }
         .goods-item{
             height: 2.2rem;
@@ -102,7 +103,7 @@
 
         .goods-item .main .specs {
             margin-bottom: .1rem;
-            color: #ccc;
+            color: #666;
         }
 
         .goods-item  .price{
@@ -158,6 +159,45 @@
            font-size: .3rem;
            margin-left: .35rem;
        }
+
+       /* 支付方式 */
+       .payment-method{
+           width: 100%;
+           background-color: #fff;
+           border-radius: .08rem;
+           padding: .1rem .24rem;
+           box-sizing: border-box;
+       }
+       .payment-method .method-item{
+           width: 100%;
+           height: .8rem;
+           font-size: .3rem;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+       }
+       .payment-method .method-item .sub-title{
+           flex: 1;
+       }
+       .payment-method .method-item .check input {
+            width: .4rem;
+            height: .4rem;
+            background: url(./images/unselected-dot.png) no-repeat;
+            background-size: .4rem .4rem;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            display: inline-block;
+        }
+
+        .payment-method .method-item .check input:checked::after {
+            width: .4rem;
+            height: .4rem;
+            content: '';
+            background: url(./images/selected-dot.png) no-repeat center center;
+            background-size: .4rem .4rem;
+            display: inline-block;
+        }
        .action-bar{
            width: 100%;
            height: 1.2rem;
@@ -258,6 +298,16 @@
                         <span class="total-num">共 2 件:</span>
                         <span>共计：</span>
                         <span class="total-price">￥ 7720.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 支付方式 -->
+            <div class="payment-method">
+                <div class="method-item">
+                    <label for="integral" class="sub-title">我的积分 : 50000</label>
+                    <div class="check">
+                        <input type="checkbox" checked id="integral">
                     </div>
                 </div>
             </div>
