@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title>提现</title>
+	    <script src="../../js/rem.js"></script>
+	    <link rel="stylesheet" href="../../css/reset.css">
+	    <link rel="stylesheet" href="../../css/swiper.min.css">
+	    <link rel="stylesheet" href="../../css/base.css">
+	    <style>
+	    	.main {
+	    		margin: .3rem .24rem;
+	    		padding: .2rem .24rem;
+	    		background: #fff;
+	    		border-radius: 10px;
+	    	}
+	    	.elect {
+	    		display: flex;
+	    		justify-content: space-between;
+	    		color: #151515;
+	    		line-height: .75rem;
+	    		font-size: .28rem;
+	    	}
+	    	.icon {
+	    		margin: .27rem 0 0;
+	    		width: .14rem;
+	    		height: .26rem;
+	    		background: url(../../images/public/right-arrow02.png) no-repeat;
+	    		background-size: 100% 100%;
+	    	}
+	    	.tit {
+	    		font-size: .28rem;
+	    		color: #151515;
+	    		line-height: .65rem;
+	    	}
+	    	.money {
+	    		display: flex;
+	    		line-height: .65rem;
+	    	}
+	    	.ney {
+	    		font-size: .36rem;
+	    	}
+	    	.inp {
+	    		padding-left: .15rem;
+	    	}
+	    	.all {
+	    		flex: 1;
+	    		text-align: right;
+	    		font-size: .24rem;
+	    		color: #1bdf81;
+	    	}
+	    	.rate {
+	    		font-size: .22rem;
+	    		color: #888787;
+	    		line-height: .65rem;
+	    	}
+	    	.apply_btn {
+	    		
+	    	}
+	    	.apply_btn a {
+	    		margin: 0 auto;
+	    		display: block;
+	    		width: 4rem;
+				height: .88rem;
+				background-color: #1ace6a;
+				border-radius: 44px;
+				color: #fff;
+				font-size: .3rem;
+				text-align: center;
+				line-height: .88rem;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- 头部 -->
+	        <div class="header">
+	            <div class="backBtn" onclick="returnFun()"><img src="../../images/category/back-icon.png" /></div>
+	            <div class="title">提现</div>
+	        </div>
+	        <div class="height-88"></div>
+	        <div class="content">
+	        	<div class="main">
+	        		<div class="elect">
+	        			<div class="way">选择提现方式</div>
+	        			<div class="icon"></div>
+	        		</div>
+	        		<div class="tit">提现金额</div>
+	        		
+	        		<div class="money">
+	        			<div class="ney">￥</div>
+	        			<input class="inp" type="number" placeholder="请输入金额"/>
+	        			<div class="all">全部提现</div>
+	        		</div>
+	        		
+	        		<p class="rate">当前手续费为￥0.1服务费（费率0.10%）</p>
+	        	</div>
+	        	<div class="apply_btn">
+	        		<a>申请提现</a>
+	        	</div>
+	        </div>
+	        
+		</div>
+		
+		<script src="../../js/jquery.min.js"></script>
+	    <script src="../../js/public.js"></script>
+	</body>
+</html>
