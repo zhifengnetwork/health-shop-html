@@ -17,3 +17,5 @@ function returnFun(){
 function pageJump(_url){
     window.location.href = _url;
 }
+
+
