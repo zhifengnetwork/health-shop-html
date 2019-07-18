@@ -24,12 +24,18 @@
 	    		color: #151515;
 	    		line-height: .75rem;
 	    		font-size: .28rem;
-	    	}
+			}
+			.elect .right{
+				display: flex;
+				align-items: center;
+				color: #999;
+			}
 	    	.icon {
 	    		width: .14rem;
 	    		height: .26rem;
 	    		background: url(../images/public/right-arrow02.png) no-repeat;
-	    		background-size: 100% 100%;
+				background-size: 100% 100%;
+				margin-left: .1rem;
 	    	}
 	    	.tit {
 	    		font-size: .28rem;
@@ -117,7 +123,7 @@
 			.tbody .service-charge{
 				color: #888787;
 			}
-			
+
 			.password-wrap{
 				display: table;
 				margin: .4rem auto 0;
@@ -275,7 +281,10 @@
 					<a href="./withdrawal_way.html">
 						<div class="elect">
 							<div class="way">选择提现方式</div>
-							<div class="icon"></div>
+							<div class="right">
+								<div class="payment_way"></div>
+								<div class="icon"></div>
+							</div>
 						</div>
 					</a>
 	        		<div class="tit">提现金额</div>
@@ -354,6 +363,10 @@
 		<script src="../js/public.js"></script>
 		<script>
 			$(function(){
+
+				var payment_way = localStorage["payment_way"];
+            	$(".payment_way").html(payment_way) 
+
 				/*存储-当前滚动条的位置*/
 				var thisScroll_num = null;
 
