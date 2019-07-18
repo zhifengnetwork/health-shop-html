@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>银行卡编辑</title>
+		<script src="../js/rem.js"></script>
+	    <link rel="stylesheet" href="../css/reset.css">
+	    <link rel="stylesheet" href="../css/swiper.min.css">
+	    <link rel="stylesheet" href="../css/base.css">
+	    <style>
+	    	.content {
+	    		padding: .28rem .24rem;
+	    	}
+	    	.bank_wrap {
+	    		display: flex;
+	    		margin-bottom: .3rem;
+	    	}
+	    	.name {
+	    		width: 15%;
+	    		font-size: .28rem;
+	    		color: #151515;
+	    		line-height: .65rem;
+	    	}
+	    	.inp_wrap {
+	    		padding: .1rem .2rem;
+	    		width: 6.12rem;
+	    		border-radius: 4px;
+	    		border: 1px solid #bfbfbf;
+	    	}
+	    	.inp {
+	    		width: 100%;
+	    		line-height: .55rem;
+	    		font-size: .26rem;
+	    	}
+	    	input::-webkit-input-placeholder {
+			    font-size: .26rem;
+			    letter-spacing: 1px;
+				color: #828282;
+			}
+			.site {
+				font-size: .3rem;
+				letter-spacing: 1px;
+				color: #151515;
+				line-height: .85rem;
+			}
+	    	.inp_text {
+	    		padding: .1rem .26rem;
+	    		width: 7.02rem;
+	    		line-height: .6rem;
+	    		border-radius: 4px;
+	    		border: 1px solid #bfbfbf;
+	    		box-sizing: border-box;
+	    		-webkit-box-sizing: border-box;
+	    	}
+	    	.text {
+	    		width: 100%;
+	    		line-height: .5rem;
+	    	}
+			.btn {
+				display: block;
+				margin: 1.2rem auto;
+				width: 4rem;
+				height: .88rem;
+				background-color: #2eda9f;
+				letter-spacing: 2px;
+				color: #fff;
+				border-radius: 44px;
+				font-size: .3rem;
+				text-align: center;
+				line-height: .88rem;
+			}
+	    	
+	    </style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- 头部 -->
+	        <div class="header">
+	            <div class="backBtn" onclick="returnFun()"><img src="../images/category/back-icon.png" /></div>
+	            <div class="title">银行卡编辑</div>
+	        </div>
+	        <div class="height-88"></div>
+	        <!--内容-->
+            <div class="content">	
+            	<div class="minor">
+            		<!--输入银行名称-->
+            		<div class="bank_wrap">
+            			<div class="name">银行：</div>
+            			<div class="inp_wrap">
+            				<input class="inp" type="text" placeholder="请输入银行名称" />
+            			</div>
+            		</div>
+            		<!--输入姓名-->
+            		<div class="bank_wrap">
+            			<div class="name">姓名：</div>
+            			<div class="inp_wrap">
+            				<input class="inp" type="text" placeholder="请输入真实名字" />
+            			</div>
+            		</div>
+            		<!--输入卡号-->
+            		<div class="bank_wrap">
+            			<div class="name">卡号：</div>
+            			<div class="inp_wrap">
+            				<input class="inp" type="number" placeholder="请输入卡号" />
+            			</div>
+            		</div>
+            		<div>
+            			<div class="site">请输入开户行地址：</div>
+            			<div class="inp_text">
+            				<input class="text" placeholder="请输入开户行地址"/>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+	        <!--按钮-->
+            <div class="btn_wrap">
+            	<a href="#" class="btn">提交申请</a>
+            </div>
+	        
+		</div>
+		
+		<script src="../js/jquery.min.js"></script>
+	    <script src="../js/public.js"></script>
+	</body>
+</html>
