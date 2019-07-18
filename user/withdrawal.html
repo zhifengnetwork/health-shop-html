@@ -36,7 +36,7 @@
 	    		color: #151515;
 	    		line-height: .65rem;
 	    	}
-	    	.money {
+	    	.content .main .money {
 	    		display: flex;
 	    		line-height: .65rem;
 	    	}
@@ -69,7 +69,196 @@
 				font-size: .3rem;
 				text-align: center;
 				line-height: .88rem;
-	    	}
+			}
+
+						
+			.mask-container {
+				margin: 1.5rem auto 0;
+				width: 80%;
+				height: 4rem;
+				border-radius: .15rem;
+				background: white;
+			}
+
+			.mask-container .heading{
+				height: .8rem;
+				font-size: .28rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+			}
+			.mask-container .heading img{
+				width: .56rem;
+				margin-right: .2rem;
+			}
+			.mask-container .close-x{
+				width: .3rem;
+				height: .3rem;
+				display: block;
+				background: url(../images/user/x-icon.png) no-repeat center center;
+				background-size: .17rem .17rem;
+				position: absolute;
+				right: .2rem;
+				top: .2rem;
+			}
+
+			.tbody p{
+				text-align: center;
+			}
+			.tbody .sub-title{
+				line-height: .54rem;
+				font-size: .28rem;
+			}
+			.tbody .money{
+				line-height: .8rem;
+				font-size: .36rem;
+			}
+			.tbody .service-charge{
+				color: #888787;
+			}
+			
+			.password-wrap{
+				display: table;
+				margin: .4rem auto 0;
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				width: auto;
+				height: .8rem;
+				border: .02rem solid #ebedf0;
+			}
+			.password-num {
+				float: left;
+				border-right: .02rem solid #ebedf0;
+				width: .8rem;
+				height: 100%;
+				font-size: 1rem;
+				line-height: .76rem;
+				text-align: center;
+			}
+			.password-num:last-child {
+				border-right: none;
+			}
+			.password-num .trem_box {
+				display: none;
+				width: 100%;
+				height: 100%;
+			}
+			.password-num .show_box {
+				display: block;
+			}
+			
+
+			/* 数字键盘弹框 */
+			.mask-wrap {
+				display: none;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 7.5rem;
+				height: 100%;
+				z-index: 103;
+				background: rgba(95,96,99,.7);
+			}
+
+			/*提示信息*/
+			.error-tip {
+				display: none;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				z-index: 1;
+				text-align: center;
+				background: white;
+				font-size: .35rem;
+				text-align: center;
+				width: 3.5rem;
+				height: 1rem;
+				line-height: 1rem;
+				border-radius:.06rem;
+				
+			}
+			/*数字键盘*/
+			.number-keyboard {
+				position: absolute;
+				bottom: -4rem;
+				left: 0;
+				width: 7.5rem;
+				height: 4rem;
+				overflow-y: scroll;
+			}
+			/* 数字键盘内容 */
+			.number-keyboard-container {
+				width: 7.5rem;
+				height: auto;	
+			}
+			/*项(数字)*/
+			.number-trem {
+				float: left;
+				position: relative;
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				width: 33%;
+				height: 1rem;	
+				font-size: .36rem;
+				line-height: 1rem;
+				text-align: center;
+				font-family: "微软雅黑";
+				border-bottom: .02rem solid #ebedf0;
+				border-right: .02rem solid #ebedf0;
+				background-color: #fff;
+			}
+			.number-trem-active {
+				background-color: #ccc;
+			}
+			/*2、5、8*/
+			.number-trem:nth-child(3n-1) {
+				width: 34%;
+			}
+			/*3的倍数-无right边框*/
+			.number-trem:nth-child(3n) {
+				border-right: none;
+			}
+			/*最后三个无bottom边框*/
+			.number-trem:nth-child(10), .number-trem:nth-child(12) {
+				border-bottom: none;
+				background-color: #eee;
+			}
+			/*数字 0*/
+			.number-trem:nth-child(11) {
+				border-bottom: none;
+			}
+			/*清除-图标*/
+			.eliminate_cion:before {
+				content: " ";
+				display: block;
+				width: .52rem;
+				height: .52rem;
+				background: url(../images/user/eliminate_cion.png) no-repeat 0 0;
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				margin: auto;
+			}
+			/*删除-点击层*/
+			.delete_box {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+			}
+
 	    </style>
 	</head>
 	<body>
@@ -79,7 +268,8 @@
 	            <div class="backBtn" onclick="returnFun()"><img src="../images/category/back-icon.png" /></div>
 	            <div class="title">提现</div>
 	        </div>
-	        <div class="height-88"></div>
+			<div class="height-88"></div>
+			
 	        <div class="content">
 	        	<div class="main">
 					<a href="./withdrawal_way.html">
@@ -101,11 +291,192 @@
 	        	<div class="apply_btn">
 	        		<a>申请提现</a>
 	        	</div>
-	        </div>
+			</div>
+			
+
+			<!-- 数字键盘弹框 -->
+			<div class="mask-wrap">
+				<div class="mask-container">
+					<div class="heading">
+						<img src="../images/user/acatav-img.png" />
+						<p>请输入支付密码</p>
+						<div class="close-x"></div>
+					</div>
+					<div class="tbody">
+						<p class="sub-title">提现</p>
+						<p class="money">￥111.02</p>
+						<p class="service-charge">手续费为￥0.1</p>
+					</div>
+					<!-- 密码框 -->
+					<div class="password-wrap">
+						<p class="password-num"><span class="trem_box">·</span></p>
+						<p class="password-num"><span class="trem_box">·</span></p>
+						<p class="password-num"><span class="trem_box">·</span></p>
+						<p class="password-num"><span class="trem_box">·</span></p>
+						<p class="password-num"><span class="trem_box">·</span></p>
+						<p class="password-num"><span class="trem_box">·</span></p>
+					</div>
+				</div>
+				
+				<!-- 密码错误弹框 -->
+				<div class="error-tip">密码错误</div>
+				
+				<!--底部弹窗（框）-->
+				<div class="number-keyboard">
+					<!--数字键盘-->
+					<div class="number-keyboard-container">
+						<!--data-num:下标-->
+						<p class="number-trem keyboard-key" data_state="true">1</p>
+						<p class="number-trem keyboard-key" data_state="true">2</p>
+						<p class="number-trem keyboard-key" data_state="true">3</p>
+						<p class="number-trem keyboard-key" data_state="true">4</p>
+						<p class="number-trem keyboard-key" data_state="true">5</p>
+						<p class="number-trem keyboard-key" data_state="true">6</p>
+						<p class="number-trem keyboard-key" data_state="true">7</p>
+						<p class="number-trem keyboard-key" data_state="true">8</p>
+						<p class="number-trem keyboard-key" data_state="true">9</p>
+						<!--最后三个无bottom边框-->
+						<p class="number-trem"></p>
+						<p class="number-trem keyboard-key" data_state="true">0</p>
+						<div class="number-trem">
+							<i class="eliminate_cion"></i>
+							<!--删除按钮-->
+							<p class="delete_box keyboard-key" data-state="delete"></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
 	        
 		</div>
 		
 		<script src="../js/jquery.min.js"></script>
-	    <script src="../js/public.js"></script>
+		<script src="../js/public.js"></script>
+		<script>
+			$(function(){
+				/*存储-当前滚动条的位置*/
+				var thisScroll_num = null;
+
+				/*获取支付密码（后台*/
+				var pass_val = '';
+
+				/**
+				 * 触摸键盘数字 
+				 */ 
+				$('.keyboard-key').on('click',function(){
+					$(this).addClass('number-trem-active');
+					
+					// 当前的数字
+					var this_nun = Number($(this).html());
+
+					// 当前-状态(输入数字true，删除false)
+					var this_state = true;
+
+					// 删除-按钮
+					if($(this).attr('data-state') == 'delete'){
+						// 当元素为空时
+						if(pass_val == ""){
+							console.log('密码为空!');
+							remove_class($(this));
+							return false;
+						}
+
+						// 删除最后一个元素
+						arr_str = pass_val.split('');
+
+						// 数组删除最后一项
+						arr_str.pop();
+						pass_val = arr_str.join('');
+						console.log('模拟删除代码',pass_val.length);
+
+						// 页面-模拟删除代码
+						if(pass_val.length > 0){
+							$('.password-num .trem_box').eq(pass_val.length).removeClass("show_box");
+						}else {
+							$('.password-num .trem_box').eq(0).removeClass("show_box");
+						}
+						this_state = false;
+					}
+
+					// 获取支付密码
+					if(pass_val.length < 6 && this_state){
+						pass_val += this_nun;
+					}
+
+					// 状态
+					if(this_state){
+						// 页面-模拟密码-代码
+						$('.password-num .trem_box').eq(pass_val.length-1).addClass("show_box");
+					}
+					console.log(pass_val);
+					// 密码长度为6时，ajax
+					if(pass_val.length == 6){
+						remove_class($(this));
+						$('.error-tip').show();
+						$('.mask-container').hide();
+						$('.number-keyboard').hide();
+						console.log('ajax-最终密码:',pass_val);
+						setTimeout(function(){
+							$('.error-tip').hide();
+							$('.mask-container').show();
+							$('.number-keyboard').show();
+							pass_val='';
+							$('.trem_box').removeClass('show_box');
+						},1100);
+						return false;
+					}
+					remove_class($(this));
+				})
+
+				/**
+				 * 移除样式 
+				 */ 
+				function remove_class(_this){
+					/*模拟-touchs事件，因为iso上失效*/
+					setTimeout(function(){
+						_this.removeClass('number-trem-active');
+					},100);
+				}
+				
+				// 拉起数字键盘弹框
+				$('.apply_btn a').on('click',function(){
+					$('.mask-wrap').show();
+					$('.number-keyboard').animate({'bottom':'0'})
+						/*获取当前滚动条的位置*/
+						thisScroll_num = $(document).scrollTop();
+						console.log('获取当前滚动条的位置',thisScroll_num);
+						/**
+						 * 禁止底部滑动，设置为fixed之后会飘到顶部，所以要动态计算当前用户所在高度
+						 */
+						$('.wrap').css({
+							'position':'fixed',
+							'top': -thisScroll_num,
+							'left': 0,
+						});
+				})
+
+				/**
+				 * 收起数字键盘弹框 
+				 */ 
+				$('.close-x').on('click',function(){
+					$('.mask-wrap').hide();
+					pass_val='';
+					$('.trem_box').removeClass('show_box');
+
+					// 数字键盘隐藏
+					$('.number-keyboard').animate({'bottom':-($('.number-keyboard').height())});
+					// 恢复底部滑动
+					$('.wrap').css({
+						'position':'',
+						'top': '',
+						'left': '',
+					});
+					console.log(66666,thisScroll_num);
+					// 恢复当前用户滚动的位置
+					$(document).scrollTop(thisScroll_num);
+				})
+
+			})
+		</script>
 	</body>
 </html>

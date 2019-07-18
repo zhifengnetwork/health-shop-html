@@ -469,6 +469,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- <div class="swiper-pagination banner_page"></div> -->
             </div>
 
         </div>
@@ -514,12 +515,16 @@
     var mySwiper = new Swiper('.banner', {
         loop: true,
         paginationClickable: true,
-        autoplay: 3000,
+        // autoplay: 3000,
         autoplayDisableOnInteraction: false,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
+        autoplay:{
+            stopOnLastSlide:true ,
+            delay: 5000 //5s切换
+        }
     })
 
     /**
@@ -537,6 +542,10 @@
             el: '.banner_page',
             clickable: true,
         },
+        autoplay:{
+            stopOnLastSlide:true ,
+            delay: 5000 //5s切换
+        },
         on: {
             progress: function (progress) {
                 for (i = 0; i < this.slides.length; i++) {
@@ -545,7 +554,7 @@
                     if (Math.abs(slideProgress) > 1) {
                         var modify = (Math.abs(slideProgress) - 1) * 0.4 + 1;
                     }
-                    translate = slideProgress * modify * 318 + 'px';
+                    translate = slideProgress * modify + 'px';
                     scale = 1 - Math.abs(slideProgress) / 5;
                     zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
                     slide.transform('translateX(' + translate + ') scale(' + scale + ')');

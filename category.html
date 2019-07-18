@@ -285,12 +285,16 @@
         var mySwiper = new Swiper('.adv-container', {
             loop: true,
             paginationClickable: true,
-            autoplay: 3000,
+            // autoplay: 3000,
             autoplayDisableOnInteraction: false,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            autoplay:{
+                stopOnLastSlide:true ,
+                delay: 5000 //5s切换
+            }
         })
 
         /**

@@ -83,6 +83,62 @@
             border-radius: .4rem;
         }
        
+        /* 蒙层 */
+        .mask{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.3);
+            z-index: 100;
+            display: none;
+        }
+        /* 上拉弹窗 */
+        .select-wrap{
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: -100%;
+            z-index: 101;
+            background: #f5f6fa;
+            transition: all 0.5s
+        }
+        .select-wrap .select-list{
+            background-color: #fff;
+        }
+        .select-wrap .select-list li{
+            height: .9rem;
+            line-height: .9rem;
+            text-align: center;
+            font-size: .3rem;
+            color: #000006;
+            border-bottom: .01rem solid #f3f3f3;
+            position: relative;
+        }
+        .select-wrap .select-list li input{
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .select-wrap .cancelBtn{
+            width: 100%;
+            height: .9rem;
+            line-height: .9rem;
+            text-align: center;
+            font-size: .3rem;
+            color: #000006;
+            background-color: #fff;
+            margin-top: .25rem;            
+            outline: none;
+            border: none;
+            border-top: .01rem solid #f3f3f3;
+        }
+
     </style>
 </head>
 
@@ -96,18 +152,18 @@
         <div class="height-88"></div>
 
         <div class="content">
-            <div class="group-line">
+            <div class="group-line" id="avatar">
                 <div class="sub-title">头像</div>
                 <div class="right">
                     <img class="avatarPic_icon" id="avatarPic" src="../images/user/acatav-img.png" />
-                    <input type="file" id="selectAvatar" accept="image/*" name="avatar-pic">
+                    <!-- <input type="file" id="selectAvatar" accept="image/*" name="avatar-pic"> -->
                 </div>
             </div>
             <div class="group-line">
                 <div class="sub-title">用户名</div>
                 <div class="right">
-                    <span class="text">美美宝宝</span>
-                    <span class="icon edit-icon"></span>
+                    <span class="text userName">美美宝宝</span>
+                    <a href="./edit_name.html"><span class="icon edit-icon"></span></a>
                 </div>
             </div>
             <div class="group-line">
@@ -141,10 +197,76 @@
             </div>
         </div>
 
+        <!-- 蒙层 -->
+        <div class="mask"></div>
+        <div class="select-wrap">
+            <ul class="select-list">
+                <li>
+                    相机
+                    <input type="file" id='shotAvatar' accept="image/*" capture='camera'>
+                </li>
+                <li>
+                    相册
+                    <input type="file" id="selectAvatar">
+                </li>
+            </ul>
+            <button class="cancelBtn">取消</button>
+        </div>
+
     </div>
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script src="../js/public.js"></script>
+    <script>
+       $(function(){
+				
+            // 上拉菜单
+            $('#avatar').click(function(){
+                showSelect();
+            })
 
+            $(".mask,.select-list li,.cancelBtn").click(function(){
+                hideSelect();
+            })
+
+            // 显示上拉菜单
+            function showSelect(){
+                $(".mask").css("display","block");
+                $(".select-wrap").css("bottom","0")
+            }
+
+            // 隐藏上拉菜单
+            function hideSelect(){
+                $(".mask").css("display","none");
+                $(".select-wrap").css("bottom","-100%")
+            }
+
+            /**
+                * 更换头像头像
+                * **/
+                $("#selectAvatar,#shotAvatar").change(function (e) {
+                for (var i = 0; i < e.target.files.length; i++) {
+                    var file = e.target.files.item(i);
+                    //验证是否为图片，不是就跳出循环
+                    if (!(/^image\/.*$/i.test(file.type))) {
+                        alert("请选择图片上传！")
+                        continue;
+                    }
+                    //实例化FileReader API  
+                    var freader = new FileReader();
+                    freader.readAsDataURL(file);
+                    freader.onload = function (e) {
+                        $("#avatarPic").attr("src", e.target.result);  //显示图片
+                    }
+                }
+            });
+
+            // 从本地数据中获取修改后的昵称
+            var userName = localStorage["userName"];
+            $(".userName").html(userName) 
+
+            
+        })
+    </script>
 </body>
 
 </html>
