@@ -459,7 +459,6 @@
                         total_money += parseInt($(e).parents('.single-item').find('.price span').html()) * parseInt($(e).parents('.single-item').find('.number').val())
                         total_count += parseInt($(e).parents('.single-item').find('.number').val());
                     }
-
                 });
                 $('.total-price').html(`¥ ${total_money.toFixed(2)}`);
                 $('.total-num').html(`(${total_count})`);
