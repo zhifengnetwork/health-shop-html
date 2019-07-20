@@ -45,20 +45,25 @@
 
         /* 轮播图 */
         .banner {
-            width: 6.6rem;
-            height: 3.2rem;
-            border-radius: .1rem;
-            box-shadow: 0 0 8px #ccc;
-            margin: 0 auto;
             position: relative;
+            padding: .1rem 0;
+            box-sizing: border-box;
+        }
+        .banner .swiper-slide{
+            width: 6.6rem !important;
+            height: 3.2rem;
+            overflow: hidden;
+            border-radius: .1rem;
+            margin: 0 .1rem;
+            box-shadow: .01rem 0 .08rem #ccc;
         }
 
-        .banner img {
+        .banner .swiper-slide img {
             width: 100%;
         }
 
         .banner .swiper-pagination {
-            bottom: .1rem;
+            bottom: .2rem;
         }
 
         .banner .swiper-pagination-bullet {
@@ -201,7 +206,7 @@
 
         .gift-area .gift-list .single-item .img-wrap {
             width: 98%;
-            height: 3.6rem;
+            height: 3.15rem;
             overflow: hidden;
             background: #efefef;
             margin: 0 auto;
@@ -512,20 +517,20 @@
     /**
      * 首页轮播图
      */
-    var mySwiper = new Swiper('.banner', {
+    var swiper = new Swiper('.banner', {
         loop: true,
-        paginationClickable: true,
-        // autoplay: 3000,
-        autoplayDisableOnInteraction: false,
+        slidesPerView:'auto',
+        // spaceBetween: 20,
+        centeredSlides: true,
+        autoplay:{
+            stopOnLastSlide:true ,
+            delay: 5000 //5s切换
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
-        autoplay:{
-            stopOnLastSlide:true ,
-            delay: 5000 //5s切换
-        }
-    })
+    });
 
     /**
      * 超值大礼包滑动效果 
