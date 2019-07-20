@@ -161,7 +161,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 9;
+            z-index: -1;
             background: rgba(0, 0, 0, .5)
         }
 
@@ -257,6 +257,28 @@
             border-right: .01rem solid #d1d1d1
         }
 
+        /* 图片放大样式 */
+        .magnify{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
+            height: auto;
+        }
+        .magnify_mask{
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vh;
+            height: 100vh;
+            background: #1a1a1a;
+            z-index: 30;
+        }
+
     </style>
 </head>
 
@@ -312,11 +334,15 @@
 
         <aside class="mask works-mask">
             <div class="mask-content">
-                <p class="del-p">您确定要删除作品图片吗？</p>
-                <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+                <p class="del-p">您确定要删除图片吗？</p>
+                <p class="check-p"><span class="wsdel-no">取消</span><span class="del-com wsdel-ok">确定</span></p>
             </div>
         </aside>
         
+        <!-- 放大后的图片 -->
+        <div class="magnify_mask">
+            <img class="magnify" src="" onerror="onerror=null;src='../images/user/loading.gif'" alt="">
+        </div>
         
 
     </div>
@@ -327,6 +353,9 @@
     <script src="../js/public.js"></script>
 
     <script>
+        /**
+         * 评分 
+         */ 
         $('.score1').raty({ 
             number:5,
             score:0,
@@ -351,6 +380,56 @@
             starOff: 'love.png',
             starOn: 'love-on.png'
         });
+
+        /**
+         * 点击图片放大 
+         */ 
+        $("body").delegate(".up-img","click",function(){
+            console.log(22)
+            if(!$(this).hasClass('magnify_active')){
+                let src = $(this).attr('src');
+                $(this).addClass('magnify_active');
+                $('.magnify_mask').show();
+                $('.magnify').attr('src',src);
+            }else{
+                $(this).removeClass('magnify_active');
+                $('.magnify_mask').hide();
+                $('.magnify').attr('src','');
+            }
+        })
+       
+        /**
+         * 关闭放大图片 
+         */ 
+        $('.magnify_mask').on('click',function(){
+            $('.up-img').removeClass('magnify_active');
+            $('.magnify').attr('src','')
+            $(this).hide();
+        });
+
+
+        /**
+         * 获取焦点——滚动条滚动底部
+         */ 
+        function scrollTo(){
+            console.log(document.body.scrollHeight)
+            var u = navigator.userAgent;
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if(isiOS){
+                $('.dialog_menu_input').focus(function(){
+                    setTimeout(function(){ 
+                        document.body.scrollTop = document.body.scrollHeight; 
+                    },300);                                 
+                })
+                $('.dialog_menu_input').blur(function(){
+                    setTimeout(function(){ 
+                        document.body.scrollTop = document.body.scrollHeight; 
+                    },300);
+                })
+            }
+        }
+       
+
     </script>
 </body>
 
