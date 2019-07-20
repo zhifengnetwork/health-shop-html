@@ -401,12 +401,11 @@
         /**
          * 关闭放大图片 
          */ 
-        $('.magnify_mask').on('click',function(){
+         $('.magnify_mask').click(function(){
             $('.up-img').removeClass('magnify_active');
             $('.magnify').attr('src','')
             $(this).hide();
-        });
-
+         })
 
         /**
          * 获取焦点——滚动条滚动底部
